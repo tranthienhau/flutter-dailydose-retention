@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily Check-in | DailyDose</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts: Lora and Nunito Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#f8d8ff",
+            "primary-fixed": "#71f8e4",
+            "primary": "#006b5f",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#151d1d",
+            "warning": "#D97706",
+            "text-secondary": "#4A615E",
+            "secondary": "#006b60",
+            "on-error": "#ffffff",
+            "surface-container-low": "#edf5f4",
+            "on-error-container": "#93000a",
+            "surface-dim": "#d4dcdb",
+            "on-tertiary-fixed-variant": "#603473",
+            "support-lilac": "#DDA8F0",
+            "outline-variant": "#bbcac6",
+            "on-primary-fixed": "#00201c",
+            "surface": "#FFFFFF",
+            "on-secondary": "#ffffff",
+            "primary-container": "#14b8a6",
+            "inverse-surface": "#2a3232",
+            "danger": "#DC2626",
+            "on-background": "#151d1d",
+            "tertiary-container": "#c591d7",
+            "secondary-fixed": "#93f4e4",
+            "text-primary": "#0C1F1D",
+            "inverse-primary": "#4fdbc8",
+            "accent-pressed": "#0B6E63",
+            "accent-tint": "#E3F7F4",
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#e7efef",
+            "surface-variant": "#dce4e3",
+            "on-primary-container": "#00423b",
+            "primary-fixed-dim": "#4fdbc8",
+            "secondary-container": "#93f4e4",
+            "inverse-on-surface": "#eaf2f1",
+            "tertiary": "#7a4c8d",
+            "surface-tint": "#006b5f",
+            "secondary-fixed-dim": "#77d7c8",
+            "outline": "#6c7a77",
+            "surface-container-high": "#e2eae9",
+            "surface-alt": "#EAF6F4",
+            "border": "#D7E8E5",
+            "background": "#f3fbfa",
+            "text-tertiary": "#7C918E",
+            "on-tertiary-container": "#522765",
+            "surface-bright": "#f3fbfa",
+            "surface-container-highest": "#dce4e3",
+            "on-secondary-fixed-variant": "#005048",
+            "on-secondary-container": "#007166",
+            "on-primary-fixed-variant": "#005048",
+            "on-tertiary-fixed": "#310344",
+            "tertiary-fixed-dim": "#e9b3fc",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a",
+            "success": "#16A34A",
+            "on-surface-variant": "#3c4947",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#00201c",
+            "accent-fill": "#0E8376"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "16px",
+            "space-lg": "24px",
+            "space-sm": "8px",
+            "space-xs": "4px",
+            "margin": "20px",
+            "space-xl": "32px",
+            "gutter": "16px"
+          },
+          "fontFamily": {
+            "title": ["Nunito Sans", "sans-serif"],
+            "label": ["Nunito Sans", "sans-serif"],
+            "display": ["Lora", "serif"],
+            "caption": ["Nunito Sans", "sans-serif"],
+            "body": ["Nunito Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Soft tactile ambient shadows defined in Design Guidance */
+    .soft-card-shadow {
+      box-shadow: 0 1px 2px rgba(12, 31, 29, 0.04), 0 8px 24px rgba(12, 31, 29, 0.06);
+    }
+    /* Hide scrollbars cleanly */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary font-body antialiased min-h-screen flex justify-center items-start selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Screen Container (393px x 852px Canvas frame) -->
+<div class="w-full max-w-[393px] min-h-[852px] bg-background flex flex-col relative pb-32">
+<!-- Status Bar Spacer (Simulating 44-54px iPhone notch/safe space) -->
+<div class="h-11 w-full flex-shrink-0"></div>
+<!-- SHARED COMPONENT: TopAppBar (Executing JSON tokens & structural commands strictly) -->
+<header class="bg-surface docked full-width top-0 border-b border-border shadow-sm flex justify-between items-center w-full px-margin h-14 z-30 sticky">
+<!-- Leading: Close icon button -->
+<button aria-label="Close" class="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-accent-tint active:scale-95 transition-all -ml-1" type="button">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+<!-- Center Title / Header Caption from Shared Blueprint & Design Requirements -->
+<div class="flex flex-col items-center">
+<h1 class="font-title text-title text-text-primary text-[15px] leading-5 font-semibold">Daily Check-in</h1>
+<span class="font-caption text-caption text-text-secondary text-[11px] leading-tight">Evening check-in, Thu Oct 2</span>
+</div>
+<!-- Trailing Action: Skip button -->
+<button class="text-text-secondary font-label text-label hover:bg-accent-tint px-2 py-1 rounded-full active:scale-95 transition-colors -mr-1" type="button">
+        Skip
+      </button>
+</header>
+<!-- Scrollable Body Content -->
+<main class="flex-1 px-margin pt-6 flex flex-col gap-6">
+<!-- Hero Header Section -->
+<section class="space-y-1">
+<h2 class="font-display text-[26px] leading-[34px] font-bold text-text-primary">
+          How did today go, Maya?
+        </h2>
+<p class="font-body text-caption text-text-secondary">
+          Reflect on your routine and wind down for the night.
+        </p>
+</section>
+<!-- 1. Focal Element: Mood Selector Card -->
+<section class="bg-surface rounded-2xl p-5 border border-border soft-card-shadow">
+<div class="flex items-center justify-between mb-3">
+<span class="font-label text-[11px] font-bold tracking-wider text-text-tertiary uppercase">
+            HOW ARE YOU FEELING?
+          </span>
+<span class="font-caption text-caption text-accent-fill font-medium">Selected: Good</span>
+</div>
+<!-- 5 Balanced Touch Cards / Mood Chips -->
+<div aria-label="Mood selection" class="grid grid-cols-5 gap-2" role="radiogroup">
+<!-- Mood 1: Great -->
+<button class="flex flex-col items-center justify-center py-3 px-1 rounded-2xl bg-accent-tint border border-transparent text-accent-fill hover:border-primary-container active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-2xl mb-1.5">sentiment_very_satisfied</span>
+<span class="font-label text-[12px] font-semibold text-accent-fill">Great</span>
+</button>
+<!-- Mood 2: Good (SELECTED - Solid #0E8376 fill with crisp white text & icon) -->
+<button aria-checked="true" class="flex flex-col items-center justify-center py-3 px-1 rounded-2xl bg-accent-fill text-white shadow-sm ring-2 ring-primary-container ring-offset-2 ring-offset-surface active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-2xl mb-1.5" style="font-variation-settings: 'FILL' 1;">sentiment_satisfied</span>
+<span class="font-label text-[12px] font-bold text-white">Good</span>
+</button>
+<!-- Mood 3: Okay -->
+<button class="flex flex-col items-center justify-center py-3 px-1 rounded-2xl bg-surface-alt border border-transparent text-text-secondary hover:bg-accent-tint active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-2xl mb-1.5">sentiment_neutral</span>
+<span class="font-label text-[12px] font-semibold text-text-secondary">Okay</span>
+</button>
+<!-- Mood 4: Tired -->
+<button class="flex flex-col items-center justify-center py-3 px-1 rounded-2xl bg-surface-alt border border-transparent text-text-secondary hover:bg-accent-tint active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-2xl mb-1.5">bedtime</span>
+<span class="font-label text-[12px] font-semibold text-text-secondary">Tired</span>
+</button>
+<!-- Mood 5: Rough -->
+<button class="flex flex-col items-center justify-center py-3 px-1 rounded-2xl bg-surface-alt border border-transparent text-text-secondary hover:bg-accent-tint active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-2xl mb-1.5">sentiment_dissatisfied</span>
+<span class="font-label text-[12px] font-semibold text-text-secondary">Rough</span>
+</button>
+</div>
+</section>
+<!-- 2. Energy Level Slider Card -->
+<section class="bg-surface rounded-2xl p-5 border border-border soft-card-shadow">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-accent-fill text-lg">bolt</span>
+<h3 class="font-title text-[15px] font-semibold text-text-primary">Energy level</h3>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-accent-tint text-accent-fill font-title text-[14px] font-bold">
+            7/10
+          </span>
+</div>
+<!-- Slider Bar Visual Construct -->
+<div class="relative w-full pt-1 pb-2">
+<!-- Background Track -->
+<div class="h-2.5 w-full bg-surface-alt rounded-full overflow-hidden relative">
+<!-- Active Teal Fill Track up to 70% -->
+<div class="h-full bg-primary-container rounded-full" style="width: 70%;"></div>
+</div>
+<!-- Custom Slider Thumb on 70% mark -->
+<div class="absolute top-[1px] left-[70%] -translate-x-1/2 w-6 h-6 rounded-full bg-accent-fill shadow-md border-2 border-surface flex items-center justify-center cursor-pointer">
+<div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+</div>
+</div>
+<div class="flex justify-between items-center text-caption font-caption text-text-tertiary text-[12px] mt-1">
+<span>Low</span>
+<span>Moderate</span>
+<span>High</span>
+</div>
+</section>
+<!-- 3. Today's Routine Checklist Section -->
+<section class="bg-surface rounded-2xl p-5 border border-border soft-card-shadow space-y-4">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-title text-[16px] font-semibold text-text-primary">Today's routine</h3>
+<p class="font-caption text-caption text-text-secondary text-[12px]">3 of 5 completed</p>
+</div>
+<span class="font-label text-caption text-primary-container font-semibold">60% Done</span>
+</div>
+<div class="divide-y divide-border">
+<!-- Item 1: Vitamin D3 -->
+<div class="py-3 flex items-center justify-between first:pt-1">
+<div class="flex items-center space-x-3">
+<div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center text-white flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<p class="font-label text-[14px] font-semibold text-text-tertiary line-through">Vitamin D3 2000 IU</p>
+<span class="font-caption text-[11px] text-text-tertiary">Morning • Taken</span>
+</div>
+</div>
+<span class="font-caption text-[12px] font-medium text-text-tertiary">8:00 AM</span>
+</div>
+<!-- Item 2: Omega-3 -->
+<div class="py-3 flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center text-white flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<p class="font-label text-[14px] font-semibold text-text-tertiary line-through">Omega-3</p>
+<span class="font-caption text-[11px] text-text-tertiary">Morning • Taken</span>
+</div>
+</div>
+<span class="font-caption text-[12px] font-medium text-text-tertiary">8:00 AM</span>
+</div>
+<!-- Item 3: Morning Walk -->
+<div class="py-3 flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center text-white flex-shrink-0">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div>
+<p class="font-label text-[14px] font-semibold text-text-tertiary line-through">Morning walk</p>
+<span class="font-caption text-[11px] text-text-tertiary">Outdoor • 2.4 km</span>
+</div>
+</div>
+<span class="font-caption text-[12px] font-medium text-text-tertiary">8:30 AM</span>
+</div>
+<!-- Item 4: Magnesium (Unchecked + Action) -->
+<div class="py-3 flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-6 h-6 rounded-full border-2 border-border flex items-center justify-center flex-shrink-0 hover:border-primary-container transition-colors">
+</div>
+<div>
+<p class="font-label text-[14px] font-semibold text-text-primary">Magnesium 200 mg</p>
+<span class="font-caption text-[11px] text-text-secondary">Bedtime routine</span>
+</div>
+</div>
+<button class="px-3 py-1 rounded-full border-[1.5px] border-accent-fill text-accent-fill font-label text-[12px] font-bold hover:bg-accent-tint active:scale-95 transition-all" type="button">
+              Mark done
+            </button>
+</div>
+<!-- Item 5: Stretching 10 min -->
+<div class="py-3 flex items-center justify-between last:pb-0">
+<div class="flex items-center space-x-3">
+<div class="w-6 h-6 rounded-full border-2 border-border flex items-center justify-center flex-shrink-0">
+</div>
+<div>
+<p class="font-label text-[14px] font-semibold text-text-primary">Stretching 10 min</p>
+<span class="font-caption text-[11px] text-text-secondary">Mobility flow</span>
+</div>
+</div>
+<span class="font-caption text-[12px] text-text-tertiary font-medium">9:45 PM</span>
+</div>
+</div>
+</section>
+<!-- 4. Optional Note Field -->
+<section class="bg-surface rounded-2xl p-5 border border-border soft-card-shadow space-y-2">
+<label class="block font-title text-[14px] font-semibold text-text-primary" for="checkin-note">
+          Anything to remember? <span class="font-caption text-text-tertiary font-normal">(optional)</span>
+</label>
+<div class="relative">
+<textarea class="w-full rounded-xl border border-border bg-background p-3 text-body text-[14px] text-text-primary placeholder:text-text-tertiary placeholder:text-[13px] focus:border-transparent focus:ring-2 focus:ring-primary-container focus:bg-surface transition-all outline-none resize-none" id="checkin-note" placeholder="Log symptoms, sleep thoughts, or daily wins..." rows="3"></textarea>
+</div>
+</section>
+</main>
+<!-- Floating / Sticky Action Container at the bottom (Safe Area Aware) -->
+<!-- Prohibiting Bottom Navigation Bar per prompt mandate -->
+<div class="fixed bottom-0 left-0 right-0 w-full max-w-[393px] mx-auto bg-gradient-to-t from-background via-background/95 to-transparent pt-4 pb-8 px-margin z-20">
+<div class="flex flex-col items-center w-full gap-2">
+<!-- Primary Pill Button with #0E8376 fill and Arrow icon -->
+<button class="w-full h-13 py-3.5 px-6 rounded-full bg-accent-fill hover:bg-accent-pressed active:scale-[0.98] transition-all shadow-md flex items-center justify-center space-x-2 text-white" type="button">
+<span class="font-label text-body font-bold text-white tracking-wide">Complete check-in</span>
+<span class="material-symbols-outlined text-[20px] text-white">arrow_forward</span>
+</button>
+<!-- Subtext indicator -->
+<div class="flex items-center space-x-1.5 pt-0.5">
+<span class="material-symbols-outlined text-accent-fill text-[16px]">local_fire_department</span>
+<p class="font-caption text-caption text-text-secondary text-[12px] font-medium">
+            Streak will update to <span class="font-semibold text-accent-fill">Day 7</span>
+</p>
+</div>
+</div>
+<!-- Home Indicator bar emulation -->
+<div class="w-32 h-1 bg-text-primary/20 rounded-full mx-auto mt-4"></div>
+</div>
+</div>
+</body></html>

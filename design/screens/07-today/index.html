@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DailyDose - Today</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400&amp;family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "border": "#D7E8E5",
+            "support-lilac": "#DDA8F0",
+            "secondary": "#006b60",
+            "on-primary-fixed": "#00201c",
+            "surface": "#FFFFFF",
+            "outline": "#6c7a77",
+            "surface-container-highest": "#dce4e3",
+            "tertiary-fixed-dim": "#e9b3fc",
+            "surface-tint": "#006b5f",
+            "primary": "#006b5f",
+            "on-secondary-fixed-variant": "#005048",
+            "tertiary": "#7a4c8d",
+            "surface-alt": "#EAF6F4",
+            "accent-tint": "#E3F7F4",
+            "surface-container-high": "#e2eae9",
+            "secondary-fixed-dim": "#77d7c8",
+            "text-secondary": "#4A615E",
+            "primary-fixed": "#71f8e4",
+            "warning": "#D97706",
+            "text-tertiary": "#7C918E",
+            "surface-container-lowest": "#ffffff",
+            "inverse-surface": "#2a3232",
+            "on-secondary-container": "#007166",
+            "on-tertiary-fixed": "#310344",
+            "error": "#ba1a1a",
+            "primary-fixed-dim": "#4fdbc8",
+            "on-primary": "#ffffff",
+            "on-surface": "#151d1d",
+            "secondary-container": "#93f4e4",
+            "accent-pressed": "#0B6E63",
+            "background": "#f3fbfa",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "text-primary": "#0C1F1D",
+            "tertiary-container": "#c591d7",
+            "on-tertiary-container": "#522765",
+            "on-primary-fixed-variant": "#005048",
+            "primary-container": "#14b8a6",
+            "on-secondary-fixed": "#00201c",
+            "tertiary-fixed": "#f8d8ff",
+            "on-background": "#151d1d",
+            "surface-container": "#e7efef",
+            "inverse-on-surface": "#eaf2f1",
+            "on-primary-container": "#00423b",
+            "on-surface-variant": "#3c4947",
+            "inverse-primary": "#4fdbc8",
+            "on-tertiary-fixed-variant": "#603473",
+            "surface-bright": "#f3fbfa",
+            "success": "#16A34A",
+            "outline-variant": "#bbcac6",
+            "surface-container-low": "#edf5f4",
+            "surface-dim": "#d4dcdb",
+            "accent-fill": "#0E8376",
+            "danger": "#DC2626",
+            "surface-variant": "#dce4e3",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed": "#93f4e4"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "4px",
+            "gutter": "16px",
+            "space-xl": "32px",
+            "space-sm": "8px",
+            "space-lg": "24px",
+            "space-md": "16px",
+            "margin": "20px"
+          },
+          "fontFamily": {
+            "body": ["Nunito Sans", "sans-serif"],
+            "title": ["Nunito Sans", "sans-serif"],
+            "caption": ["Nunito Sans", "sans-serif"],
+            "display": ["Lora", "serif"],
+            "label": ["Nunito Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-shadow {
+      box-shadow: 0 1px 2px rgba(12, 31, 29, 0.04), 0 8px 24px rgba(12, 31, 29, 0.06);
+    }
+    .hero-glow-shadow {
+      box-shadow: 0 4px 20px -2px rgba(20, 184, 166, 0.2), 0 12px 30px -4px rgba(221, 168, 240, 0.25);
+    }
+    .fab-shadow {
+      box-shadow: 0 8px 20px -2px rgba(14, 131, 118, 0.35);
+    }
+    /* Hide scrollbars cleanly */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-[#F4FCFB] font-body text-text-primary antialiased flex justify-center min-h-screen selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Simulator Frame (iPhone 393 x 852 layout container) -->
+<div class="relative w-full max-w-[393px] min-h-[852px] bg-[#F4FCFB] flex flex-col justify-between overflow-x-hidden border-x border-[#EAF6F4] shadow-2xl">
+<!-- Top System Safe Area + Status Bar (iOS approx 50px) -->
+<div class="pt-3 px-7 flex justify-between items-center text-[14px] font-bold text-text-primary tracking-tight select-none">
+<span>9:41</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[16px]">wifi</span>
+<span class="material-symbols-outlined text-[20px]">battery_full</span>
+</div>
+</div>
+<!-- Top Navigation Anchor (Shared Component Execution) -->
+<header class="flex justify-between items-center w-full px-5 py-3 bg-transparent">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-fill text-[24px]">spa</span>
+<span class="font-display text-[22px] font-bold text-accent-fill tracking-tight">DailyDose</span>
+</div>
+<!-- Mini Streak Metric Pill in Header -->
+<div class="flex items-center gap-1.5 bg-surface custom-shadow px-3 py-1.5 rounded-full border border-border">
+<span class="material-symbols-outlined fill-icon text-[18px] text-[#F59E0B]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label text-caption text-text-primary font-bold">6 Days</span>
+</div>
+</header>
+<!-- Main Scrollable Content Canvas -->
+<main class="flex-1 px-5 pt-2 pb-24 overflow-y-auto no-scrollbar space-y-5">
+<!-- User Greeting & Header Profile Section -->
+<section class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-3.5">
+<!-- Circular Avatar with subtle ring -->
+<div class="relative w-14 h-14 rounded-full p-[2px] bg-gradient-to-tr from-primary-container via-accent-fill to-support-lilac">
+<img alt="Maya profile" class="w-full h-full object-cover object-top rounded-full bg-surface" src="https://lh3.googleusercontent.com/aida/AEtjO1XBb2FerBCMoZ3PalR-pw9Hoc4R6WraKdf7KzlMbXx3csgsSAbsrWWnyhyxvpeJvXD2ocGf3npIiUwY6XnHsVDE2kP6Pl94IQZNTX-uuC5UyZDZssbi2lFvUasEV1byeG3kKO-VST3yriZNFafwynOHzbsDIAmC9EcN3WOQTehd8iRapltLPkXIuuELCxtXV8cMTQOtWX-O-7E0_yAqzMVe2cAU65jT4r3UZnVyRR-O67N7g6WY-uaFRg"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-success border-2 border-surface rounded-full"></span>
+</div>
+<div class="flex flex-col">
+<h1 class="font-display text-[24px] font-bold text-text-primary leading-tight">Good morning, Maya</h1>
+<p class="font-caption text-caption text-text-secondary font-medium">Thursday, Oct 2</p>
+</div>
+</div>
+<!-- Notification Bell Icon Button -->
+<button aria-label="Notifications" class="relative w-10 h-10 rounded-full bg-surface flex items-center justify-center custom-shadow border border-border text-text-secondary active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-danger rounded-full"></span>
+</button>
+</section>
+<!-- Focal Element: Soft Aura Streak Highlight Card -->
+<section class="relative overflow-hidden rounded-[20px] p-5 custom-shadow hero-glow-shadow bg-gradient-to-br from-[#14B8A6]/15 via-[#F4FCFB] to-[#DDA8F0]/25 border border-border/80">
+<!-- Atmospheric soft blurred orb decorative layer -->
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-support-lilac/30 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute -left-6 -bottom-6 w-28 h-28 bg-primary-container/20 rounded-full blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex items-center justify-between gap-4">
+<!-- Progress Ring Gauge -->
+<div class="relative w-[88px] h-[88px] flex items-center justify-center flex-shrink-0">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 72 72">
+<!-- Background track ring -->
+<circle cx="36" cy="36" fill="none" r="30" stroke="#E2EAE9" stroke-width="6.5"></circle>
+<!-- Progress fill ring (60% = 188.49 * 0.6 = 113.1 fill, gap 75.4) -->
+<circle class="transition-all duration-1000 ease-out" cx="36" cy="36" fill="none" r="30" stroke="#0E8376" stroke-dasharray="188.5" stroke-dashoffset="75.4" stroke-linecap="round" stroke-width="6.5"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-label text-[18px] font-extrabold text-accent-fill leading-none">3/5</span>
+<span class="font-caption text-[10px] text-text-tertiary font-bold mt-0.5">COMPLETED</span>
+</div>
+</div>
+<!-- Streak Info & Copy -->
+<div class="flex-1 pr-1">
+<div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent-tint text-accent-fill mb-1.5 border border-accent-fill/20">
+<span class="material-symbols-outlined fill-icon text-[14px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label text-[12px] font-bold tracking-wide">Day 6 streak</span>
+</div>
+<h2 class="font-title text-[17px] font-bold text-text-primary leading-snug">You're 60% done today!</h2>
+<p class="font-caption text-[13px] text-text-secondary mt-0.5 leading-snug">Keep your morning momentum going through the afternoon.</p>
+</div>
+</div>
+</section>
+<!-- Checklist Section: Today's Routine -->
+<section class="space-y-3 pt-1">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<h3 class="font-display text-[20px] font-bold text-text-primary">Today</h3>
+<span class="px-2 py-0.5 rounded-full bg-[#EAF6F4] text-text-secondary font-label text-[12px] font-semibold">5 items</span>
+</div>
+<span class="font-caption text-caption text-accent-fill font-bold">Oct 2</span>
+</div>
+<div class="space-y-2.5">
+<!-- Item 1: Vitamin D3 (Done) -->
+<div class="group relative flex items-center justify-between p-3.5 rounded-[20px] bg-surface custom-shadow border border-[#EAF6F4] transition-all duration-200 hover:border-border">
+<div class="flex items-center gap-3.5 min-w-0">
+<!-- Checked Icon Circle -->
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0 text-white shadow-sm transition-transform active:scale-90">
+<span class="material-symbols-outlined text-[19px] font-bold">check</span>
+</div>
+<div class="flex flex-col truncate">
+<span class="font-title text-[15px] font-semibold text-text-primary/70 line-through truncate decoration-text-tertiary">Vitamin D3 2000 IU</span>
+<span class="font-caption text-[12px] text-text-tertiary">Morning Routine</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 flex-shrink-0 pl-2">
+<span class="font-caption text-[12px] font-bold text-accent-fill bg-accent-tint px-2.5 py-1 rounded-full">8:00 AM</span>
+</div>
+</div>
+<!-- Item 2: Omega-3 (Done) -->
+<div class="group relative flex items-center justify-between p-3.5 rounded-[20px] bg-surface custom-shadow border border-[#EAF6F4] transition-all duration-200 hover:border-border">
+<div class="flex items-center gap-3.5 min-w-0">
+<!-- Checked Icon Circle -->
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0 text-white shadow-sm transition-transform active:scale-90">
+<span class="material-symbols-outlined text-[19px] font-bold">check</span>
+</div>
+<div class="flex flex-col truncate">
+<span class="font-title text-[15px] font-semibold text-text-primary/70 line-through truncate decoration-text-tertiary">Omega-3</span>
+<span class="font-caption text-[12px] text-text-tertiary">Heart &amp; Cognitive</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 flex-shrink-0 pl-2">
+<span class="font-caption text-[12px] font-bold text-accent-fill bg-accent-tint px-2.5 py-1 rounded-full">8:00 AM</span>
+</div>
+</div>
+<!-- Item 3: Morning walk (Done) -->
+<div class="group relative flex items-center justify-between p-3.5 rounded-[20px] bg-surface custom-shadow border border-[#EAF6F4] transition-all duration-200 hover:border-border">
+<div class="flex items-center gap-3.5 min-w-0">
+<!-- Checked Icon Circle -->
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0 text-white shadow-sm transition-transform active:scale-90">
+<span class="material-symbols-outlined text-[19px] font-bold">check</span>
+</div>
+<div class="flex flex-col truncate">
+<span class="font-title text-[15px] font-semibold text-text-primary/70 line-through truncate decoration-text-tertiary">Morning walk 20 min</span>
+<span class="font-caption text-[12px] text-text-tertiary">Outdoor Mobility</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 flex-shrink-0 pl-2">
+<span class="font-caption text-[12px] font-bold text-accent-fill bg-accent-tint px-2.5 py-1 rounded-full">8:30 AM</span>
+</div>
+</div>
+<!-- Item 4: Magnesium (Pending) -->
+<div class="group relative flex items-center justify-between p-3.5 rounded-[20px] bg-surface custom-shadow border border-border/80 transition-all duration-200 hover:border-accent-fill/40">
+<div class="flex items-center gap-3.5 min-w-0">
+<!-- Pending Check Ring -->
+<div class="w-8 h-8 rounded-full border-2 border-border group-hover:border-accent-fill flex items-center justify-center flex-shrink-0 bg-transparent transition-colors active:scale-90">
+<div class="w-2.5 h-2.5 rounded-full bg-transparent group-hover:bg-accent-tint transition-colors"></div>
+</div>
+<div class="flex flex-col truncate">
+<span class="font-title text-[15px] font-bold text-text-primary truncate">Magnesium 200 mg</span>
+<span class="font-caption text-[12px] text-text-secondary">Evening Relaxation</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 flex-shrink-0 pl-2">
+<span class="font-caption text-[12px] font-medium text-text-secondary bg-[#F4FCFB] border border-border px-2.5 py-1 rounded-full">9:30 PM</span>
+</div>
+</div>
+<!-- Item 5: Stretching (Pending) -->
+<div class="group relative flex items-center justify-between p-3.5 rounded-[20px] bg-surface custom-shadow border border-border/80 transition-all duration-200 hover:border-accent-fill/40">
+<div class="flex items-center gap-3.5 min-w-0">
+<!-- Pending Check Ring -->
+<div class="w-8 h-8 rounded-full border-2 border-border group-hover:border-accent-fill flex items-center justify-center flex-shrink-0 bg-transparent transition-colors active:scale-90">
+<div class="w-2.5 h-2.5 rounded-full bg-transparent group-hover:bg-accent-tint transition-colors"></div>
+</div>
+<div class="flex flex-col truncate">
+<span class="font-title text-[15px] font-bold text-text-primary truncate">Stretching 10 min</span>
+<span class="font-caption text-[12px] text-text-secondary">Bedtime Mobility</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 flex-shrink-0 pl-2">
+<span class="font-caption text-[12px] font-medium text-text-secondary bg-[#F4FCFB] border border-border px-2.5 py-1 rounded-full">9:45 PM</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Reflection / Mindfulness Insight Tile -->
+<section class="p-4 rounded-[20px] bg-surface-alt border border-border/70 flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+</div>
+<div class="flex-1">
+<h4 class="font-title text-[13px] font-bold text-text-primary">Hydration reminder</h4>
+<p class="font-caption text-[12px] text-text-secondary leading-snug">Take your evening magnesium with a full glass of room temperature water.</p>
+</div>
+</section>
+</main>
+<!-- Contextual Floating Action Button (Add Routine / Dose) -->
+<div class="absolute bottom-20 right-5 z-30">
+<button aria-label="Add routine item" class="w-14 h-14 rounded-full bg-accent-fill hover:bg-accent-pressed active:scale-95 text-white flex items-center justify-center fab-shadow transition-all duration-200 focus:outline-none">
+<span class="material-symbols-outlined text-[28px] font-medium">add</span>
+</button>
+</div>
+<!-- Fixed Bottom Tab Bar (Strict 4 Tabs: Today, Routines, Progress, Profile) -->
+<nav class="relative z-20 w-full bg-surface border-t border-border pt-2 pb-6 px-4">
+<div class="grid grid-cols-4 items-center justify-items-center">
+<!-- Tab 1: Today (ACTIVE) -->
+<a class="flex flex-col items-center justify-center py-1 group w-full active:scale-95 transition-transform" href="#today">
+<span class="material-symbols-outlined text-[24px] text-accent-fill fill-icon mb-0.5" style="font-variation-settings: 'FILL' 1;">wb_sunny</span>
+<span class="font-label text-[12px] font-bold text-accent-fill tracking-tight">Today</span>
+</a>
+<!-- Tab 2: Routines (INACTIVE) -->
+<a class="flex flex-col items-center justify-center py-1 group w-full active:scale-95 transition-transform" href="#routines">
+<span class="material-symbols-outlined text-[24px] text-text-tertiary group-hover:text-text-secondary mb-0.5">checklist</span>
+<span class="font-label text-[12px] font-semibold text-text-tertiary group-hover:text-text-secondary tracking-tight">Routines</span>
+</a>
+<!-- Tab 3: Progress (INACTIVE) -->
+<a class="flex flex-col items-center justify-center py-1 group w-full active:scale-95 transition-transform" href="#progress">
+<span class="material-symbols-outlined text-[24px] text-text-tertiary group-hover:text-text-secondary mb-0.5">trending_up</span>
+<span class="font-label text-[12px] font-semibold text-text-tertiary group-hover:text-text-secondary tracking-tight">Progress</span>
+</a>
+<!-- Tab 4: Profile (INACTIVE) -->
+<a class="flex flex-col items-center justify-center py-1 group w-full active:scale-95 transition-transform" href="#profile">
+<span class="material-symbols-outlined text-[24px] text-text-tertiary group-hover:text-text-secondary mb-0.5">person</span>
+<span class="font-label text-[12px] font-semibold text-text-tertiary group-hover:text-text-secondary tracking-tight">Profile</span>
+</a>
+</div>
+<!-- iOS Home Indicator Safe Bar -->
+<div class="w-32 h-1 bg-[#DCE4E3] rounded-full mx-auto mt-3"></div>
+</nav>
+</div>
+</body></html>

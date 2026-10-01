@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DailyDose Lock Screen</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed": "#00201c",
+            "on-primary-fixed": "#00201c",
+            "surface-tint": "#006b5f",
+            "on-primary-container": "#00423b",
+            "on-surface-variant": "#3c4947",
+            "primary-fixed": "#71f8e4",
+            "surface-alt": "#EAF6F4",
+            "surface-variant": "#dce4e3",
+            "error-container": "#ffdad6",
+            "accent-pressed": "#0B6E63",
+            "on-surface": "#151d1d",
+            "error": "#ba1a1a",
+            "surface-dim": "#d4dcdb",
+            "success": "#16A34A",
+            "border": "#D7E8E5",
+            "tertiary-fixed-dim": "#e9b3fc",
+            "on-tertiary-container": "#522765",
+            "secondary-container": "#93f4e4",
+            "surface-container-low": "#edf5f4",
+            "text-tertiary": "#7C918E",
+            "primary-fixed-dim": "#4fdbc8",
+            "on-secondary-fixed-variant": "#005048",
+            "on-error": "#ffffff",
+            "background": "#f3fbfa",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#eaf2f1",
+            "surface-container": "#e7efef",
+            "on-primary-fixed-variant": "#005048",
+            "surface-container-highest": "#dce4e3",
+            "danger": "#DC2626",
+            "text-primary": "#0C1F1D",
+            "outline-variant": "#bbcac6",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed-dim": "#77d7c8",
+            "surface-container-high": "#e2eae9",
+            "outline": "#6c7a77",
+            "on-tertiary-fixed": "#310344",
+            "tertiary": "#7a4c8d",
+            "text-secondary": "#4A615E",
+            "on-tertiary-fixed-variant": "#603473",
+            "tertiary-fixed": "#f8d8ff",
+            "inverse-primary": "#4fdbc8",
+            "primary": "#006b5f",
+            "surface-container-lowest": "#ffffff",
+            "on-background": "#151d1d",
+            "secondary-fixed": "#93f4e4",
+            "primary-container": "#14b8a6",
+            "on-primary": "#ffffff",
+            "accent-fill": "#0E8376",
+            "tertiary-container": "#c591d7",
+            "surface-bright": "#f3fbfa",
+            "inverse-surface": "#2a3232",
+            "surface": "#FFFFFF",
+            "on-secondary-container": "#007166",
+            "warning": "#D97706",
+            "secondary": "#006b60",
+            "support-lilac": "#DDA8F0",
+            "accent-tint": "#E3F7F4"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "32px",
+            "space-sm": "8px",
+            "space-md": "16px",
+            "gutter": "16px",
+            "margin": "20px",
+            "space-xs": "4px",
+            "space-lg": "24px"
+          },
+          "fontFamily": {
+            "label": ["Nunito Sans"],
+            "display": ["Lora"],
+            "caption": ["Nunito Sans"],
+            "body": ["Nunito Sans"],
+            "title": ["Nunito Sans"]
+          },
+          "fontSize": {
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .ios-clock {
+      font-feature-settings: "tnum";
+      font-variant-numeric: tabular-nums;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.22);
+    }
+    .ios-date {
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-black text-text-primary min-h-screen flex items-center justify-center p-0 md:p-6 select-none font-body antialiased">
+<!-- iPhone Frame Mockup (393px x 852px) -->
+<main class="relative w-full max-w-[393px] h-[852px] rounded-[52px] overflow-hidden shadow-2xl border-[6px] border-[#1e2022] flex flex-col justify-between bg-black">
+<!-- Scenic Real Photo Wallpaper -->
+<div class="absolute inset-0 z-0">
+<img alt="Calm scenic park with morning mist and golden sunrise" class="w-full h-full object-cover transform scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1Xbt_ajBqUaQfgHg-j8Dy01FloXdJxvZUfqw2zQxDFHj6YbdE47f4JDJVVZVmd3Zz7XE69o8O5IQgJeKmxXRkEDEiMzWMqeXi-2rMaBW1w4t9PtBUK1ITBnV1e_v3JqbScIJJky2NmXFkYR-lqyrG6283z0jXzGvx5QZrKqKKuNgr8WZtBYM6aaGKh9VXT16CTdm48Te1fb8_EyjHPweJqA6VAJ1Yp-gUJ8KgSgUHe-mXpI_didecpEmA"/>
+<!-- Subtle legibility gradient scrim -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/35 via-black/15 to-black/45"></div>
+<div class="absolute inset-0 backdrop-blur-[2px]"></div>
+</div>
+<!-- Top Area: Status Bar & Clock Section -->
+<header class="relative z-10 pt-3 px-6 flex flex-col items-center">
+<!-- iOS Status Bar -->
+<div class="w-full flex justify-between items-center text-white h-7 text-xs font-semibold px-2">
+<span class="tracking-tight text-white/95 text-[15px]">9:41</span>
+<!-- Dynamic Island / Speaker cutout aesthetic indicator -->
+<div class="w-28 h-6 bg-black rounded-full absolute left-1/2 -translate-x-1/2 top-2.5 flex items-center justify-end pr-2.5">
+<div class="w-2.5 h-2.5 rounded-full bg-[#101918]"></div>
+</div>
+<div class="flex items-center space-x-1.5 text-white/95">
+<!-- Cellular signal -->
+<svg class="w-4 h-3.5 fill-current" viewbox="0 0 17 12">
+<rect height="4" rx="0.5" width="2.5" x="0" y="8"></rect>
+<rect height="6" rx="0.5" width="2.5" x="4" y="6"></rect>
+<rect height="9" rx="0.5" width="2.5" x="8" y="3"></rect>
+<rect height="12" rx="0.5" width="2.5" x="12" y="0"></rect>
+</svg>
+<!-- Wifi -->
+<svg class="w-4 h-3.5 fill-current" viewbox="0 0 16 12">
+<path d="M8 12a1.8 1.8 0 1 1 0-3.6A1.8 1.8 0 0 1 8 12zm5.66-6.66a8 8 0 0 0-11.32 0 .9.9 0 0 1-1.28-1.28 9.8 9.8 0 0 1 13.88 0 .9.9 0 0 1-1.28 1.28zm-2.83 2.83a4.01 4.01 0 0 0-5.66 0 .9.9 0 0 1-1.28-1.28 5.81 5.81 0 0 1 8.22 0 .9.9 0 0 1-1.28 1.28z"></path>
+</svg>
+<!-- Battery -->
+<div class="flex items-center">
+<div class="w-5 h-2.5 rounded-[4px] border border-white/90 p-[1.5px] flex items-center">
+<div class="h-full w-full bg-white rounded-[1.5px]"></div>
+</div>
+<div class="w-0.5 h-1 bg-white/90 rounded-r-sm"></div>
+</div>
+</div>
+</div>
+<!-- Lock Icon Indicator -->
+<div class="mt-2 text-white/80">
+<span class="material-symbols-outlined text-[17px]">lock</span>
+</div>
+<!-- Lock Screen Date -->
+<div class="mt-1 text-white/90 ios-date text-[17px] font-medium tracking-tight">
+        Thursday, October 2
+      </div>
+<!-- Lock Screen Clock -->
+<div class="mt-0 text-white ios-clock text-[80px] font-bold tracking-tight leading-tight">
+        8:00
+      </div>
+</header>
+<!-- Mid Section: Push Notification Sequence Stack -->
+<section class="relative z-10 px-4 w-full flex-1 flex flex-col justify-end pb-3 overflow-hidden">
+<div class="w-full space-y-2.5">
+<!-- Notification 1 (Hero with Actions) -->
+<article class="bg-white/85 backdrop-blur-xl border border-white/50 rounded-2xl p-3.5 shadow-lg transition-transform active:scale-[0.99] duration-150">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center space-x-2">
+<div class="w-5 h-5 rounded-md bg-accent-fill flex items-center justify-center text-white shadow-xs">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<span class="font-title text-[13px] font-bold text-text-primary tracking-tight">DailyDose</span>
+</div>
+<span class="font-caption text-[11px] text-text-tertiary">now</span>
+</div>
+<div>
+<h1 class="font-title text-[14px] font-bold text-text-primary leading-tight">Day 1 - Vitamin D3 at 8:00 AM</h1>
+<p class="font-body text-[13px] text-text-secondary mt-0.5 leading-snug">Tap Done to start your streak</p>
+</div>
+<!-- Interactive Action Buttons -->
+<div class="flex items-center space-x-2.5 mt-3 pt-1">
+<button class="flex-1 bg-accent-fill hover:bg-accent-pressed text-white text-[12px] font-semibold py-1.5 px-3 rounded-full text-center shadow-sm active:scale-95 transition-all">
+              Done
+            </button>
+<button class="flex-1 bg-white/70 hover:bg-white/90 text-text-primary text-[12px] font-semibold py-1.5 px-3 rounded-full text-center border border-black/5 active:scale-95 transition-all">
+              Snooze 15 min
+            </button>
+</div>
+</article>
+<!-- Notification 2 -->
+<article class="bg-white/80 backdrop-blur-xl border border-white/40 rounded-2xl p-3.5 shadow-md transition-transform active:scale-[0.99] duration-150">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center space-x-2">
+<div class="w-5 h-5 rounded-md bg-accent-fill flex items-center justify-center text-white shadow-xs">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<span class="font-title text-[13px] font-bold text-text-primary tracking-tight">DailyDose</span>
+</div>
+<span class="font-caption text-[11px] text-text-tertiary">9:30 PM</span>
+</div>
+<div>
+<h2 class="font-title text-[14px] font-bold text-text-primary leading-tight">Day 3 - 3 days in a row!</h2>
+<p class="font-body text-[13px] text-text-secondary mt-0.5 leading-snug">Keep it going with your evening Magnesium</p>
+</div>
+</article>
+<!-- Notification 3 -->
+<article class="bg-white/80 backdrop-blur-xl border border-white/40 rounded-2xl p-3.5 shadow-md transition-transform active:scale-[0.99] duration-150">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center space-x-2">
+<div class="w-5 h-5 rounded-md bg-accent-fill flex items-center justify-center text-white shadow-xs">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<span class="font-title text-[13px] font-bold text-text-primary tracking-tight">DailyDose</span>
+</div>
+<span class="font-caption text-[11px] text-text-tertiary">10:00 AM</span>
+</div>
+<div>
+<h2 class="font-title text-[14px] font-bold text-text-primary leading-tight">Day 5 - Your free trial ends in 2 days</h2>
+<p class="font-body text-[13px] text-text-secondary mt-0.5 leading-snug">See what you built</p>
+</div>
+</article>
+<!-- Notification 4 -->
+<article class="bg-white/80 backdrop-blur-xl border border-white/40 rounded-2xl p-3.5 shadow-md transition-transform active:scale-[0.99] duration-150">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center space-x-2">
+<div class="w-5 h-5 rounded-md bg-accent-fill flex items-center justify-center text-white shadow-xs">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<span class="font-title text-[13px] font-bold text-text-primary tracking-tight">DailyDose</span>
+</div>
+<span class="font-caption text-[11px] text-text-tertiary">6:00 PM</span>
+</div>
+<div>
+<h2 class="font-title text-[14px] font-bold text-text-primary leading-tight">Day 7 - 7 day streak</h2>
+<p class="font-body text-[13px] text-text-secondary mt-0.5 leading-snug">Your weekly report is ready</p>
+</div>
+</article>
+</div>
+</section>
+<!-- Bottom Controls & Home Indicator -->
+<footer class="relative z-10 px-9 pb-3 pt-2">
+<div class="flex items-center justify-between mb-5">
+<!-- Flashlight Quick Toggle -->
+<button aria-label="Toggle Flashlight" class="w-12 h-12 rounded-full bg-black/30 backdrop-blur-md text-white flex items-center justify-center shadow-lg border border-white/10 active:bg-white/30 transition-all active:scale-90">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">flashlight_on</span>
+</button>
+<!-- Swipe up hint -->
+<div class="text-[12px] font-medium text-white/70 tracking-wide">
+          Swipe up to unlock
+        </div>
+<!-- Camera Quick Toggle -->
+<button aria-label="Open Camera" class="w-12 h-12 rounded-full bg-black/30 backdrop-blur-md text-white flex items-center justify-center shadow-lg border border-white/10 active:bg-white/30 transition-all active:scale-90">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+</button>
+</div>
+<!-- iOS Home Indicator -->
+<div class="w-36 h-1 bg-white/75 rounded-full mx-auto mb-1"></div>
+</footer>
+</main>
+</body></html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DailyDose - Save Your Routine</title>
+<!-- Google Fonts: Lora (Display) & Nunito Sans (Body/UI) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400&amp;family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#FFFFFF",
+            "secondary-container": "#93f4e4",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "text-primary": "#0C1F1D",
+            "surface-container": "#e7efef",
+            "text-secondary": "#4A615E",
+            "on-surface-variant": "#3c4947",
+            "on-secondary-fixed-variant": "#005048",
+            "inverse-surface": "#2a3232",
+            "inverse-primary": "#4fdbc8",
+            "on-primary-container": "#00423b",
+            "secondary-fixed-dim": "#77d7c8",
+            "on-primary": "#ffffff",
+            "accent-tint": "#E3F7F4",
+            "secondary": "#006b60",
+            "on-primary-fixed": "#00201c",
+            "primary-fixed": "#71f8e4",
+            "tertiary-fixed-dim": "#e9b3fc",
+            "on-secondary-fixed": "#00201c",
+            "tertiary": "#7a4c8d",
+            "on-tertiary-container": "#522765",
+            "tertiary-container": "#c591d7",
+            "on-secondary": "#ffffff",
+            "secondary-fixed": "#93f4e4",
+            "surface-dim": "#d4dcdb",
+            "border": "#D7E8E5",
+            "primary-fixed-dim": "#4fdbc8",
+            "on-surface": "#151d1d",
+            "on-tertiary-fixed-variant": "#603473",
+            "accent-pressed": "#0B6E63",
+            "surface-container-highest": "#dce4e3",
+            "outline": "#6c7a77",
+            "error": "#ba1a1a",
+            "on-secondary-container": "#007166",
+            "on-error-container": "#93000a",
+            "surface-tint": "#006b5f",
+            "surface-bright": "#f3fbfa",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed-variant": "#005048",
+            "inverse-on-surface": "#eaf2f1",
+            "primary-container": "#14b8a6",
+            "surface-container-low": "#edf5f4",
+            "tertiary-fixed": "#f8d8ff",
+            "on-background": "#151d1d",
+            "success": "#16A34A",
+            "surface-variant": "#dce4e3",
+            "surface-alt": "#EAF6F4",
+            "surface-container-high": "#e2eae9",
+            "on-tertiary-fixed": "#310344",
+            "primary": "#006b5f",
+            "accent-fill": "#0E8376",
+            "text-tertiary": "#7C918E",
+            "danger": "#DC2626",
+            "warning": "#D97706",
+            "background": "#f3fbfa",
+            "error-container": "#ffdad6",
+            "outline-variant": "#bbcac6",
+            "support-lilac": "#DDA8F0"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "16px",
+            "gutter": "16px",
+            "space-lg": "24px",
+            "space-xl": "32px",
+            "margin": "20px",
+            "space-xs": "4px",
+            "space-sm": "8px"
+          },
+          "fontFamily": {
+            "caption": ["Nunito Sans"],
+            "body": ["Nunito Sans"],
+            "display": ["Lora"],
+            "label": ["Nunito Sans"],
+            "title": ["Lora"]
+          },
+          "fontSize": {
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-1 {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+    .soft-card-shadow {
+      box-shadow: 0 1px 2px rgba(12, 31, 29, 0.04), 0 8px 24px rgba(12, 31, 29, 0.06);
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary antialiased min-h-screen flex justify-center items-start sm:py-8 selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Screen Container (393px × 852px) -->
+<main class="w-full max-w-[393px] min-h-[852px] bg-background relative flex flex-col justify-between overflow-hidden shadow-2xl sm:rounded-[44px] sm:border-[8px] sm:border-surface">
+<!-- Top Safe Area & Top Bar -->
+<header class="w-full pt-12 pb-3 px-5 flex items-center justify-between z-10">
+<!-- Back Action Button -->
+<button aria-label="Go back" class="w-10 h-10 -ml-1 rounded-full flex items-center justify-center text-text-primary hover:bg-surface-alt transition-colors duration-150 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<!-- Brand Logo / Badge Anchor -->
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface/80 backdrop-blur-sm border border-border/60">
+<span class="material-symbols-outlined text-accent-fill text-[18px]">spa</span>
+<span class="font-display font-bold text-caption text-accent-fill tracking-wide">DailyDose</span>
+</div>
+<!-- Balance Spacer -->
+<div aria-hidden="true" class="w-10 h-10 -mr-1"></div>
+</header>
+<!-- Main Content Canvas -->
+<div class="flex-1 px-5 pt-2 pb-6 flex flex-col justify-between">
+<div>
+<!-- Heading & Motivation -->
+<section class="mt-2 mb-6">
+<div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent-tint text-accent-fill text-caption font-label mb-3">
+<span class="material-symbols-outlined text-[15px] fill-1">arrow_back_ios_new</span>
+<span>Step 2 of 2</span>
+</div>
+<h1 class="font-display text-display text-text-primary mb-2 tracking-tight">Save your routine</h1>
+<p class="font-body text-body text-text-secondary">Create a free account so you never lose your streak and personalized schedules.</p>
+</section>
+<!-- Summary Card (Focal Hero Element) -->
+<article class="bg-surface rounded-[20px] p-5 border border-border soft-card-shadow transition-transform hover:-translate-y-0.5 duration-200">
+<!-- Card Header Indicator -->
+<div class="flex items-center justify-between pb-3.5 mb-4 border-b border-border/60">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px] fill-1">check_circle</span>
+</span>
+<span class="font-label text-label font-bold text-text-primary">Your routine is ready</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-alt text-accent-fill font-label text-caption">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-fill animate-pulse"></span>
+              Active
+            </span>
+</div>
+<!-- Routine Details Row -->
+<div class="flex items-center gap-3.5 mb-4">
+<!-- Thumbnail using provided image placeholder -->
+<div class="relative w-16 h-16 rounded-[14px] overflow-hidden flex-shrink-0 bg-surface-alt border border-border/70">
+<img alt="Daily wellness vitamin bottle on wooden table" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XaUYZVh3K3mAuOQwX_r-ZycG1u1msSj-Fujpyxl81QtTKhjtj4oJTmYnZJOkv-zutFJ-zz6CQySoNiKtu4NhRr67pX8QQUN1Gh2W1kSADhrVJoEGhc5Oz0jYHqP5_ophm6rUnhqDlSxMx0nMR92m3RlxC1PvbKNlndiEdOhbFdLM4HYUvkDrDDBRffwKxdqANBkQEbsGZqatoWxMKymKBt8wgX3j33x6XMAy37Gii5iXBh0xZrryIK8Q"/>
+</div>
+<!-- Routine Spec Info -->
+<div class="flex-1 min-w-0">
+<h2 class="font-label text-label font-bold text-text-primary truncate">Vitamin D3, every day</h2>
+<div class="flex items-center gap-1 text-text-secondary font-caption text-caption mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-text-tertiary">schedule</span>
+<span>8:00 AM • Morning boost with breakfast</span>
+</div>
+</div>
+</div>
+<!-- Perks & Chips Cluster -->
+<div class="pt-3 border-t border-surface-container flex flex-wrap items-center gap-2">
+<!-- Reminders Status Chip -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-tint text-accent-fill font-label text-caption">
+<span class="material-symbols-outlined text-[14px] fill-1">notifications_active</span>
+<span>Reminders on</span>
+</div>
+<!-- Streak Incentive Chip -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-alt text-text-secondary font-label text-caption">
+<span class="material-symbols-outlined text-[14px] text-accent-fill fill-1">local_fire_department</span>
+<span>Streak tracking activated</span>
+</div>
+</div>
+</article>
+<!-- Value Reassurance Micro-List -->
+<div class="mt-6 px-2 space-y-2.5">
+<div class="flex items-center gap-2.5 text-text-secondary">
+<span class="material-symbols-outlined text-accent-fill text-[18px]">verified_user</span>
+<span class="font-body text-caption">Private &amp; encrypted wellness telemetry</span>
+</div>
+<div class="flex items-center gap-2.5 text-text-secondary">
+<span class="material-symbols-outlined text-accent-fill text-[18px]">sync</span>
+<span class="font-body text-caption">Automatic sync across your Apple devices</span>
+</div>
+</div>
+</div>
+<!-- Action & Auth Buttons Area -->
+<footer class="mt-8 space-y-3">
+<!-- Primary Auth: Apple Sign-In -->
+<button class="w-full h-13 py-3.5 px-6 rounded-full bg-[#0C1F1D] hover:bg-black text-white font-label text-label flex items-center justify-center gap-3 transition-transform duration-150 active:scale-95 shadow-md" type="button">
+<!-- Apple SVG Icon -->
+<svg aria-hidden="true" class="w-5 h-5 fill-current mb-0.5" viewbox="0 0 170 170">
+<path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.67-7.81-11.96-14.34-6.3-9.67-11.19-20.73-14.65-33.18-3.46-12.45-5.2-24.08-5.2-34.89 0-14.53 3.69-26.68 11.06-36.46 7.37-9.78 16.71-14.74 28.02-14.88 4.8 0 10.36 1.34 16.68 4.02 6.32 2.68 10.02 4.08 11.11 4.19 1.63-.22 5.56-1.63 11.8-4.24 6.24-2.61 11.75-3.81 16.54-3.59 12.39.76 22.39 5.33 30 13.7-10.87 6.63-16.2 15.66-16 27.07.22 8.91 3.59 16.36 10.11 22.34 6.52 5.98 14.13 9.4 22.83 10.27-2.61 7.6-5.87 15.44-9.78 23.51zM119.22 31.84c0-7.72 2.72-14.9 8.15-21.53 5.43-6.63 12.18-10.31 20.22-11.06.22 1.09.33 2.07.33 2.93 0 7.61-2.83 14.9-8.48 21.85-5.65 6.96-12.45 10.76-20.39 11.41-.11-1.08-.22-2.12-.22-3.6z"></path>
+</svg>
+<span class="tracking-wide">Sign in with Apple</span>
+</button>
+<!-- Secondary Auth: Continue with Email -->
+<button class="w-full h-13 py-3.5 px-6 rounded-full bg-transparent border-[1.5px] border-accent-fill text-accent-fill font-label text-label hover:bg-accent-tint/40 flex items-center justify-center gap-2.5 transition-colors duration-150 active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+<span>Continue with email</span>
+</button>
+<!-- Tertiary Action: Maybe later -->
+<div class="text-center pt-1.5 pb-1">
+<button class="text-text-secondary hover:text-text-primary font-label text-caption transition-colors duration-150 py-1 px-3 rounded-full hover:bg-surface-container/60" type="button">
+            Maybe later
+          </button>
+</div>
+<!-- Legal Disclaimer Caption -->
+<p class="font-caption text-[11px] leading-relaxed text-text-tertiary text-center px-4 pt-1">
+          By continuing you agree to DailyDose's 
+          <a class="underline underline-offset-2 hover:text-text-secondary transition-colors" href="#terms">Terms of Service</a> 
+          and 
+          <a class="underline underline-offset-2 hover:text-text-secondary transition-colors" href="#privacy">Privacy Policy</a>.
+        </p>
+<!-- iOS Safe Area Home Bar Indicator -->
+<div aria-hidden="true" class="w-full pt-4 pb-1 flex justify-center">
+<div class="w-32 h-1 bg-text-primary/20 rounded-full"></div>
+</div>
+</footer>
+</div>
+</main>
+</body></html>

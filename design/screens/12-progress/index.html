@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DailyDose - Progress</title>
+<!-- Google Fonts: Lora (Display Serif) & Nunito Sans (Body/UI) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,600&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;1,6..12,600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined (Exact link & class rules) -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 Script -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration Verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed-dim": "#e9b3fc",
+            "primary-fixed-dim": "#4fdbc8",
+            "on-secondary-container": "#007166",
+            "inverse-on-surface": "#eaf2f1",
+            "surface-container-highest": "#dce4e3",
+            "success": "#16A34A",
+            "danger": "#DC2626",
+            "support-lilac": "#DDA8F0",
+            "warning": "#D97706",
+            "secondary-fixed": "#93f4e4",
+            "on-primary": "#ffffff",
+            "text-primary": "#0C1F1D",
+            "on-tertiary-container": "#522765",
+            "accent-fill": "#0E8376",
+            "on-error": "#ffffff",
+            "surface-container": "#e7efef",
+            "on-tertiary": "#ffffff",
+            "primary-fixed": "#71f8e4",
+            "on-primary-fixed": "#00201c",
+            "on-primary-fixed-variant": "#005048",
+            "tertiary-fixed": "#f8d8ff",
+            "on-surface-variant": "#3c4947",
+            "text-tertiary": "#7C918E",
+            "inverse-surface": "#2a3232",
+            "tertiary": "#7a4c8d",
+            "on-primary-container": "#00423b",
+            "tertiary-container": "#c591d7",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#006b60",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#603473",
+            "on-surface": "#151d1d",
+            "on-secondary": "#ffffff",
+            "border": "#D7E8E5",
+            "outline": "#6c7a77",
+            "surface-bright": "#f3fbfa",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "secondary-fixed-dim": "#77d7c8",
+            "outline-variant": "#bbcac6",
+            "text-secondary": "#4A615E",
+            "inverse-primary": "#4fdbc8",
+            "on-secondary-fixed-variant": "#005048",
+            "primary": "#006b5f",
+            "background": "#f3fbfa",
+            "on-secondary-fixed": "#00201c",
+            "primary-container": "#14b8a6",
+            "on-background": "#151d1d",
+            "on-tertiary-fixed": "#310344",
+            "surface": "#FFFFFF",
+            "surface-variant": "#dce4e3",
+            "surface-tint": "#006b5f",
+            "surface-dim": "#d4dcdb",
+            "secondary-container": "#93f4e4",
+            "accent-tint": "#E3F7F4",
+            "surface-container-high": "#e2eae9",
+            "surface-container-low": "#edf5f4",
+            "surface-alt": "#EAF6F4",
+            "accent-pressed": "#0B6E63"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "4px",
+            "space-md": "16px",
+            "gutter": "16px",
+            "margin": "20px",
+            "space-xl": "32px",
+            "space-sm": "8px",
+            "space-lg": "24px"
+          },
+          "fontFamily": {
+            "caption": [
+              "Nunito Sans"
+            ],
+            "body": [
+              "Nunito Sans"
+            ],
+            "display": [
+              "Lora"
+            ],
+            "label": [
+              "Nunito Sans"
+            ],
+            "title": [
+              "Nunito Sans"
+            ]
+          },
+          "fontSize": {
+            "caption": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "body": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "display": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "label": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "600"
+              }
+            ],
+            "title": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* Custom Soft Atmospheric Ambient Shadows as per DESIGN.md */
+    .soft-card-shadow {
+      box-shadow: 0 1px 2px rgba(12, 31, 29, 0.04), 0 8px 24px rgba(12, 31, 29, 0.06);
+    }
+    .soft-glow-teal {
+      box-shadow: 0 4px 14px rgba(20, 184, 166, 0.35);
+    }
+    /* Safe area and scrollbar tweaks */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary antialiased font-body flex justify-center min-h-screen">
+<!-- iPhone Frame Mock Container (393px width constraint) -->
+<main class="relative w-full max-w-[393px] min-h-[852px] bg-background flex flex-col justify-between overflow-x-hidden pb-[100px]">
+<!-- Content Wrapper -->
+<div class="w-full flex flex-col">
+<!-- iOS Status Bar Placeholder -->
+<div class="w-full h-11 pt-3 px-7 flex justify-between items-center select-none">
+<span class="font-label text-caption font-bold text-text-primary">9:41</span>
+<div class="flex items-center space-x-1.5 text-text-primary">
+<span class="material-symbols-outlined text-[15px]" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[15px]" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="battery_full">battery_full</span>
+</div>
+</div>
+<!-- TopAppBar (Mapped from Shared Component: small_center_aligned, headline: DailyDose, icon: spa) -->
+<header class="flex justify-between items-center w-full px-5 py-2.5 bg-transparent">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-accent-fill text-[24px]" data-icon="spa" data-weight="fill" style="font-variation-settings: 'FILL' 1;">spa</span>
+<span class="font-display text-title font-bold text-accent-fill">DailyDose</span>
+</div>
+<button aria-label="Notifications" class="w-9 h-9 rounded-full bg-surface soft-card-shadow flex items-center justify-center text-text-secondary active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Page Title & Week Selector Area -->
+<section class="px-5 pt-2 pb-4 flex flex-col space-y-3">
+<div class="flex items-end justify-between">
+<h1 class="font-display text-display text-text-primary">Progress</h1>
+<!-- Week Selector Pill -->
+<div class="flex items-center bg-surface border border-border rounded-full px-3 py-1.5 soft-card-shadow space-x-1">
+<button aria-label="Previous week" class="text-text-tertiary hover:text-accent-fill flex items-center justify-center p-0.5 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_left">chevron_left</span>
+</button>
+<span class="font-label text-caption text-text-primary tracking-tight px-1 font-semibold">Sep 26 - Oct 2</span>
+<button aria-label="Next week" class="text-text-tertiary hover:text-accent-fill flex items-center justify-center p-0.5 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Main Stack: Bento-inspired clean health widgets -->
+<div class="px-5 flex flex-col space-y-4">
+<!-- Focal Element: Big Prominent Streak Hero Card -->
+<section class="w-full bg-surface rounded-DEFAULT p-5 soft-card-shadow relative overflow-hidden">
+<!-- Subtle decorative atmospheric backdrop circle -->
+<div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-accent-tint pointer-events-none opacity-60"></div>
+<div class="flex items-start justify-between relative z-10">
+<div class="flex flex-col">
+<div class="inline-flex items-center space-x-1 bg-accent-tint px-2.5 py-1 rounded-full w-fit mb-2">
+<span class="material-symbols-outlined text-primary-container text-[16px]" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label text-caption text-accent-fill font-bold">Active Streak</span>
+</div>
+<div class="flex items-baseline space-x-2">
+<span class="font-display text-[56px] leading-[60px] font-bold text-text-primary">6</span>
+<span class="font-title text-title text-text-secondary">day streak</span>
+</div>
+<p class="font-body text-caption text-text-secondary mt-1.5 max-w-[210px] leading-relaxed">
+                You're on track to beat your personal best! Keep your rhythm going.
+              </p>
+</div>
+<!-- Stylized circular badge visual -->
+<div class="relative flex-shrink-0 w-20 h-20 rounded-full bg-accent-tint flex items-center justify-center border-4 border-surface soft-card-shadow">
+<span class="material-symbols-outlined text-primary-container text-[38px]" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<div class="absolute -bottom-1 bg-accent-fill text-on-primary text-[10px] font-label font-bold px-2 py-0.5 rounded-full">
+                DAY 6
+              </div>
+</div>
+</div>
+</section>
+<!-- Weekly Bar Chart Card -->
+<section class="w-full bg-surface rounded-DEFAULT p-5 soft-card-shadow flex flex-col">
+<div class="flex items-center justify-between mb-5">
+<div>
+<h2 class="font-title text-title text-text-primary">Daily completion</h2>
+<p class="font-body text-caption text-text-secondary">Weekly routine consistency</p>
+</div>
+<!-- Lilac Goal Legend Indicator -->
+<div class="flex items-center space-x-1.5 bg-surface-alt px-2.5 py-1 rounded-full border border-border">
+<span class="w-2.5 h-[2px] rounded-full bg-support-lilac"></span>
+<span class="font-label text-[11px] text-text-secondary font-medium">Daily goal 80%</span>
+</div>
+</div>
+<!-- Chart Area with Goal Line -->
+<div class="relative w-full h-44 flex flex-col justify-end pt-3">
+<!-- Goal Guideline at 80% Height -->
+<div class="absolute left-0 right-0 top-[28%] flex items-center z-10 pointer-events-none">
+<div class="w-full border-b border-dashed border-support-lilac border-opacity-90"></div>
+</div>
+<!-- Bar Columns -->
+<div class="grid grid-cols-7 gap-2.5 items-end h-full z-20">
+<!-- Mon: 75% -->
+<div class="flex flex-col items-center h-full justify-end group">
+<span class="font-caption text-[11px] text-text-tertiary mb-1">75%</span>
+<div class="w-full bg-surface-alt rounded-t-full h-3/4 flex flex-col justify-end overflow-hidden p-0.5">
+<div class="w-full bg-primary-container opacity-85 rounded-t-full h-[75%]"></div>
+</div>
+<span class="font-label text-caption text-text-tertiary mt-2">M</span>
+</div>
+<!-- Tue: 100% -->
+<div class="flex flex-col items-center h-full justify-end group">
+<span class="font-caption text-[11px] text-text-tertiary mb-1">100%</span>
+<div class="w-full bg-surface-alt rounded-t-full h-3/4 flex flex-col justify-end overflow-hidden p-0.5">
+<div class="w-full bg-primary-container rounded-t-full h-full"></div>
+</div>
+<span class="font-label text-caption text-text-tertiary mt-2">T</span>
+</div>
+<!-- Wed: 85% -->
+<div class="flex flex-col items-center h-full justify-end group">
+<span class="font-caption text-[11px] text-text-tertiary mb-1">85%</span>
+<div class="w-full bg-surface-alt rounded-t-full h-3/4 flex flex-col justify-end overflow-hidden p-0.5">
+<div class="w-full bg-primary-container rounded-t-full h-[85%]"></div>
+</div>
+<span class="font-label text-caption text-text-tertiary mt-2">W</span>
+</div>
+<!-- Thu (TODAY / Oct 2): 100% - Distinctly Highlighted -->
+<div class="flex flex-col items-center h-full justify-end relative">
+<span class="font-caption text-[11px] text-accent-fill font-bold mb-1">100%</span>
+<div class="w-full bg-accent-tint rounded-t-full h-3/4 flex flex-col justify-end p-0.5 border border-primary-container">
+<div class="w-full bg-primary-container rounded-t-full h-full soft-glow-teal relative">
+<!-- Glow Dot Marker -->
+<div class="absolute top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-on-primary"></div>
+</div>
+</div>
+<div class="flex flex-col items-center mt-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-fill mb-0.5"></span>
+<span class="font-label text-caption text-accent-fill font-bold">Thu</span>
+</div>
+</div>
+<!-- Fri: Upcoming / Planned (0%) -->
+<div class="flex flex-col items-center h-full justify-end group">
+<span class="font-caption text-[11px] text-text-tertiary mb-1 opacity-0">-</span>
+<div class="w-full bg-surface-alt rounded-t-full h-3/4 flex flex-col justify-end overflow-hidden p-0.5 border border-dashed border-border">
+<div class="w-full bg-transparent h-0"></div>
+</div>
+<span class="font-label text-caption text-text-tertiary mt-2">F</span>
+</div>
+<!-- Sat: Upcoming (0%) -->
+<div class="flex flex-col items-center h-full justify-end group">
+<span class="font-caption text-[11px] text-text-tertiary mb-1 opacity-0">-</span>
+<div class="w-full bg-surface-alt rounded-t-full h-3/4 flex flex-col justify-end overflow-hidden p-0.5 border border-dashed border-border">
+<div class="w-full bg-transparent h-0"></div>
+</div>
+<span class="font-label text-caption text-text-tertiary mt-2">S</span>
+</div>
+<!-- Sun: Upcoming (0%) -->
+<div class="flex flex-col items-center h-full justify-end group">
+<span class="font-caption text-[11px] text-text-tertiary mb-1 opacity-0">-</span>
+<div class="w-full bg-surface-alt rounded-t-full h-3/4 flex flex-col justify-end overflow-hidden p-0.5 border border-dashed border-border">
+<div class="w-full bg-transparent h-0"></div>
+</div>
+<span class="font-label text-caption text-text-tertiary mt-2">S</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Stat Cards Row: Two compact side-by-side cards -->
+<section class="grid grid-cols-2 gap-3.5 w-full">
+<!-- Card 1: Best Streak -->
+<div class="bg-surface rounded-DEFAULT p-4 soft-card-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-body text-caption text-text-secondary">Best streak</span>
+<div class="w-7 h-7 rounded-full bg-accent-tint flex items-center justify-center">
+<span class="material-symbols-outlined text-accent-fill text-[16px]" data-icon="emoji_events">emoji_events</span>
+</div>
+</div>
+<div class="mt-3">
+<span class="font-display text-[26px] leading-[30px] font-bold text-text-primary">14 days</span>
+<p class="font-caption text-[12px] text-text-tertiary mt-0.5">Achieved in Sept</p>
+</div>
+</div>
+<!-- Card 2: This Month Adherence Rate -->
+<div class="bg-surface rounded-DEFAULT p-4 soft-card-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-body text-caption text-text-secondary">This month</span>
+<div class="w-7 h-7 rounded-full bg-accent-tint flex items-center justify-center">
+<span class="material-symbols-outlined text-accent-fill text-[16px]" data-icon="calendar_month">calendar_month</span>
+</div>
+</div>
+<div class="mt-3">
+<div class="flex items-baseline space-x-1">
+<span class="font-display text-[26px] leading-[30px] font-bold text-text-primary">86%</span>
+<span class="font-label text-[11px] text-success font-semibold flex items-center">
+<span class="material-symbols-outlined text-[13px]" data-icon="arrow_upward">arrow_upward</span>4%
+                </span>
+</div>
+<p class="font-caption text-[12px] text-text-tertiary mt-0.5">Adherence rate</p>
+</div>
+</div>
+</section>
+<!-- Milestones & Badges Section -->
+<section class="w-full bg-surface rounded-DEFAULT p-5 soft-card-shadow">
+<div class="flex items-center justify-between mb-3.5">
+<h2 class="font-title text-title text-text-primary">Milestones &amp; Badges</h2>
+<button class="font-label text-caption text-accent-fill font-bold flex items-center">
+              View all
+              <span class="material-symbols-outlined text-[16px] ml-0.5" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center">
+<!-- Badge 1: First Week (Earned) -->
+<div class="flex flex-col items-center p-2 rounded-xl hover:bg-surface-alt transition-colors">
+<div class="w-14 h-14 rounded-full bg-accent-tint flex items-center justify-center mb-2 relative border border-[#c3ede6]">
+<span class="material-symbols-outlined text-accent-fill text-[26px]" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<div class="absolute -bottom-1 -right-0.5 w-4 h-4 rounded-full bg-success flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[10px]" data-icon="check">check</span>
+</div>
+</div>
+<span class="font-label text-caption text-text-primary font-bold">First week</span>
+<span class="font-caption text-[11px] text-accent-fill">Earned</span>
+</div>
+<!-- Badge 2: Early Bird (Earned) -->
+<div class="flex flex-col items-center p-2 rounded-xl hover:bg-surface-alt transition-colors">
+<div class="w-14 h-14 rounded-full bg-accent-tint flex items-center justify-center mb-2 relative border border-[#c3ede6]">
+<span class="material-symbols-outlined text-accent-fill text-[26px]" data-icon="wb_sunny" data-weight="fill" style="font-variation-settings: 'FILL' 1;">wb_sunny</span>
+<div class="absolute -bottom-1 -right-0.5 w-4 h-4 rounded-full bg-success flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[10px]" data-icon="check">check</span>
+</div>
+</div>
+<span class="font-label text-caption text-text-primary font-bold">Early bird</span>
+<span class="font-caption text-[11px] text-accent-fill">Earned</span>
+</div>
+<!-- Badge 3: 50 doses (Locked) -->
+<div class="flex flex-col items-center p-2 rounded-xl opacity-65">
+<div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center mb-2 relative border border-border">
+<span class="material-symbols-outlined text-text-tertiary text-[24px]" data-icon="lock">lock</span>
+</div>
+<span class="font-label text-caption text-text-secondary font-semibold">50 doses</span>
+<span class="font-caption text-[11px] text-text-tertiary">38/50 done</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Fixed 4-Tab Bottom Navigation Bar -->
+<!-- Specs: Flat white background, 1px #D7E8E5 top border, exactly 4 tabs: Today, Routines, Progress (Active in #0E8376), Profile -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[393px] bg-surface border-t border-border z-50 px-4 pt-2.5 pb-6">
+<div class="grid grid-cols-4 items-center">
+<!-- Tab 1: Today (sun icon, text-tertiary) -->
+<a aria-label="Today" class="flex flex-col items-center justify-center py-1 text-text-tertiary active:scale-95 transition-transform" href="#today">
+<span class="material-symbols-outlined text-[24px]" data-icon="light_mode">light_mode</span>
+<span class="font-label text-[11px] font-semibold mt-1 text-text-tertiary">Today</span>
+</a>
+<!-- Tab 2: Routines (checklist icon, text-tertiary) -->
+<a aria-label="Routines" class="flex flex-col items-center justify-center py-1 text-text-tertiary active:scale-95 transition-transform" href="#routines">
+<span class="material-symbols-outlined text-[24px]" data-icon="checklist">checklist</span>
+<span class="font-label text-[11px] font-semibold mt-1 text-text-tertiary">Routines</span>
+</a>
+<!-- Tab 3: Progress (ACTIVE in #0E8376 accent-fill) -->
+<a aria-current="page" aria-label="Progress" class="flex flex-col items-center justify-center py-1 text-accent-fill active:scale-95 transition-transform" href="#progress">
+<span class="material-symbols-outlined text-[24px]" data-icon="show_chart" data-weight="fill" style="font-variation-settings: 'FILL' 1;">show_chart</span>
+<span class="font-label text-[11px] font-bold mt-1 text-accent-fill">Progress</span>
+</a>
+<!-- Tab 4: Profile (user icon, text-tertiary) -->
+<a aria-label="Profile" class="flex flex-col items-center justify-center py-1 text-text-tertiary active:scale-95 transition-transform" href="#profile">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-label text-[11px] font-semibold mt-1 text-text-tertiary">Profile</span>
+</a>
+</div>
+<!-- iOS Home Indicator Clearance -->
+<div class="w-32 h-1 bg-text-primary opacity-20 rounded-full mx-auto mt-2.5"></div>
+</nav>
+</main>
+<script>
+    // Lightweight micro-interaction for tabs and cards
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+      });
+    });
+  </script>
+</body></html>

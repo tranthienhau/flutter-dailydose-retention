@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DailyDose Cancel / Win-back Screen</title>
+<!-- Google Fonts: Lora & Nunito Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,600&amp;family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error": "#ffffff",
+            "support-lilac": "#DDA8F0",
+            "tertiary-fixed": "#f8d8ff",
+            "on-tertiary-fixed-variant": "#603473",
+            "on-primary-fixed-variant": "#005048",
+            "inverse-primary": "#4fdbc8",
+            "on-secondary-fixed-variant": "#005048",
+            "text-tertiary": "#7C918E",
+            "surface-tint": "#006b5f",
+            "secondary-fixed-dim": "#77d7c8",
+            "success": "#16A34A",
+            "on-secondary-fixed": "#00201c",
+            "on-primary-fixed": "#00201c",
+            "error-container": "#ffdad6",
+            "surface-variant": "#dce4e3",
+            "on-tertiary": "#ffffff",
+            "surface-alt": "#EAF6F4",
+            "accent-tint": "#E3F7F4",
+            "secondary-fixed": "#93f4e4",
+            "inverse-surface": "#2a3232",
+            "primary-container": "#14b8a6",
+            "surface-container-low": "#edf5f4",
+            "border": "#D7E8E5",
+            "danger": "#DC2626",
+            "warning": "#D97706",
+            "tertiary-fixed-dim": "#e9b3fc",
+            "surface-container-highest": "#dce4e3",
+            "outline-variant": "#bbcac6",
+            "secondary-container": "#93f4e4",
+            "on-tertiary-container": "#522765",
+            "background": "#f3fbfa",
+            "on-surface": "#151d1d",
+            "text-secondary": "#4A615E",
+            "primary": "#006b5f",
+            "accent-fill": "#0E8376",
+            "on-primary": "#ffffff",
+            "inverse-on-surface": "#eaf2f1",
+            "primary-fixed-dim": "#4fdbc8",
+            "error": "#ba1a1a",
+            "on-secondary-container": "#007166",
+            "accent-pressed": "#0B6E63",
+            "surface-dim": "#d4dcdb",
+            "surface": "#FFFFFF",
+            "text-primary": "#0C1F1D",
+            "on-primary-container": "#00423b",
+            "surface-container-high": "#e2eae9",
+            "on-secondary": "#ffffff",
+            "primary-fixed": "#71f8e4",
+            "on-background": "#151d1d",
+            "surface-container-lowest": "#ffffff",
+            "surface-bright": "#f3fbfa",
+            "surface-container": "#e7efef",
+            "on-surface-variant": "#3c4947",
+            "tertiary-container": "#c591d7",
+            "secondary": "#006b60",
+            "on-tertiary-fixed": "#310344",
+            "tertiary": "#7a4c8d",
+            "outline": "#6c7a77",
+            "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "4px",
+            "space-lg": "24px",
+            "space-sm": "8px",
+            "space-md": "16px",
+            "margin": "20px",
+            "space-xl": "32px",
+            "gutter": "16px"
+          },
+          "fontFamily": {
+            "display": [
+              "Lora"
+            ],
+            "body": [
+              "Nunito Sans"
+            ],
+            "title": [
+              "Nunito Sans"
+            ],
+            "caption": [
+              "Nunito Sans"
+            ],
+            "label": [
+              "Nunito Sans"
+            ]
+          },
+          "fontSize": {
+            "display": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "body": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ],
+            "title": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "caption": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "label": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "600"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-shadow {
+      box-shadow: 0 1px 2px rgba(12,31,29,0.04), 0 8px 24px rgba(12,31,29,0.06);
+    }
+    /* Hide scrollbars for smooth mobile aesthetics */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    * {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#e9f3f2] flex items-center justify-center min-h-screen p-0 sm:p-4 text-text-primary antialiased font-body selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Screen Container: iPhone 393 x 852 Viewport Frame -->
+<main class="w-[393px] h-[852px] max-h-[852px] bg-background relative flex flex-col overflow-hidden sm:rounded-[44px] sm:shadow-2xl border border-border/60">
+<!-- Top System Status Area -->
+<header class="w-full pt-[14px] px-margin pb-1 flex justify-between items-center z-20 flex-shrink-0">
+<span class="font-label text-[14px] font-bold text-text-primary tracking-tight">9:41</span>
+<div class="flex items-center space-x-1.5 text-text-primary">
+<span class="material-symbols-outlined text-[17px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[17px]">wifi</span>
+<span class="material-symbols-outlined text-[20px]">battery_full</span>
+</div>
+</header>
+<!-- Top App Header / Navigation (Dismiss / Return) -->
+<nav class="w-full px-margin h-12 flex items-center justify-between flex-shrink-0 z-20">
+<button aria-label="Go back" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface-alt active:scale-95 transition-all" onclick="history.back()">
+<span class="material-symbols-outlined text-[22px]">arrow_back</span>
+</button>
+<div class="flex items-center space-x-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-title text-[15px] font-bold tracking-tight text-accent-fill">DailyDose</span>
+</div>
+<button aria-label="Close" class="w-10 h-10 -mr-2 rounded-full flex items-center justify-center text-text-tertiary hover:bg-surface-alt active:scale-95 transition-all" onclick="console.log('Close clicked')">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</nav>
+<!-- Scrollable Content Stack -->
+<div class="flex-1 overflow-y-auto px-margin pt-1 pb-6 space-y-4">
+<!-- Screen Heading & Warm Ack Message -->
+<section class="space-y-1 pt-1">
+<h1 class="font-display text-[27px] leading-[34px] font-bold text-text-primary tracking-tight">
+          Before you go, Maya
+        </h1>
+<p class="font-body text-[14px] leading-[21px] text-text-secondary">
+          Here is what you have achieved so far during your trial.
+        </p>
+</section>
+<!-- Focal Recap Card (Achievement & Streak Metrics) -->
+<section class="bg-surface rounded-[20px] p-4 custom-shadow border border-border/80 flex flex-col space-y-3.5">
+<div class="flex items-start justify-between">
+<div class="pr-2">
+<span class="inline-flex items-center gap-1 font-caption text-xs font-semibold uppercase tracking-wider text-accent-fill bg-accent-tint px-2.5 py-0.5 rounded-full mb-1">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+              Trial Highlights
+            </span>
+<h2 class="font-title text-[16px] leading-[22px] font-bold text-text-primary pt-0.5">
+              In 5 days you took 41 doses and kept a 6 day streak
+            </h2>
+</div>
+</div>
+<!-- Metric Badges Stack -->
+<div class="grid grid-cols-2 gap-2 pt-0.5">
+<!-- Metric 1: Doses Taken -->
+<div class="bg-surface-alt rounded-2xl p-2.5 flex items-center gap-2.5 border border-border/40">
+<div class="w-9 h-9 rounded-xl bg-accent-tint flex items-center justify-center text-accent-fill flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">medication</span>
+</div>
+<div>
+<div class="font-label text-[17px] font-bold leading-none text-text-primary">41</div>
+<div class="font-caption text-[11px] font-semibold text-text-secondary mt-0.5">Doses Logged</div>
+</div>
+</div>
+<!-- Metric 2: Streak -->
+<div class="bg-surface-alt rounded-2xl p-2.5 flex items-center gap-2.5 border border-border/40">
+<div class="w-9 h-9 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div>
+<div class="font-label text-[17px] font-bold leading-none text-text-primary">6 Days</div>
+<div class="font-caption text-[11px] font-semibold text-text-secondary mt-0.5">Active Streak</div>
+</div>
+</div>
+</div>
+<!-- Weekly Mini Consistency Chart -->
+<div class="pt-1">
+<div class="flex items-center justify-between text-[11px] font-caption text-text-tertiary mb-2">
+<span>Consistency Record</span>
+<span class="font-semibold text-primary">96% On-time</span>
+</div>
+<div class="flex items-end justify-between gap-1.5 h-14 bg-surface-bright p-2 rounded-xl border border-border/30">
+<!-- Day 1 Mon -->
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="w-full max-w-[24px] bg-primary-container rounded-t-md h-[80%] transition-all"></div>
+<span class="font-caption text-[10px] text-text-secondary">M</span>
+</div>
+<!-- Day 2 Tue -->
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="w-full max-w-[24px] bg-primary-container rounded-t-md h-[95%] transition-all"></div>
+<span class="font-caption text-[10px] text-text-secondary">T</span>
+</div>
+<!-- Day 3 Wed -->
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="w-full max-w-[24px] bg-support-lilac rounded-t-md h-[75%] transition-all"></div>
+<span class="font-caption text-[10px] text-text-secondary">W</span>
+</div>
+<!-- Day 4 Thu -->
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="w-full max-w-[24px] bg-primary-container rounded-t-md h-[100%] transition-all"></div>
+<span class="font-caption text-[10px] text-text-secondary">T</span>
+</div>
+<!-- Day 5 Fri -->
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="w-full max-w-[24px] bg-primary-container rounded-t-md h-[90%] transition-all"></div>
+<span class="font-caption text-[10px] text-text-secondary">F</span>
+</div>
+<!-- Day 6 Sat (Today) -->
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="w-full max-w-[24px] bg-accent-fill rounded-t-md h-[70%] transition-all"></div>
+<span class="font-caption text-[10px] font-bold text-accent-fill">Sat</span>
+</div>
+<!-- Day 7 Sun (Upcoming) -->
+<div class="flex-1 flex flex-col items-center gap-1.5 h-full justify-end">
+<div class="w-full max-w-[24px] bg-surface-variant/50 rounded-t-md h-[20%] transition-all"></div>
+<span class="font-caption text-[10px] text-text-tertiary">S</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Win-Back Plan Selection Section -->
+<section class="space-y-2.5">
+<h3 class="font-label text-[13px] font-bold uppercase tracking-wider text-text-secondary px-0.5">
+          Special offer for Maya
+        </h3>
+<!-- Primary Highlighted Offer Card: 50% Off Annual -->
+<label class="block relative cursor-pointer" onclick="selectPlan('annual')">
+<input checked="" class="peer sr-only" id="plan_annual" name="plan_option" type="radio"/>
+<div class="p-4 bg-surface rounded-[20px] custom-shadow border-2 border-accent-fill transition-all peer-checked:bg-surface peer-checked:border-accent-fill">
+<!-- Top Badging row -->
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full font-label text-xs font-bold bg-accent-fill text-white shadow-sm">
+                50% off
+              </span>
+<div class="w-5 h-5 rounded-full border-2 border-accent-fill flex items-center justify-center bg-accent-fill text-white">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<!-- Headline -->
+<h4 class="font-title text-[16px] leading-[22px] font-bold text-text-primary">
+              Stay for $19.99 your first year
+              <span class="font-body text-[14px] line-through text-text-tertiary font-normal ml-1">$39.99</span>
+</h4>
+<!-- Details Description -->
+<p class="font-caption text-[12px] leading-[17px] text-text-secondary mt-1">
+              Billed annually after trial • Cancel anytime • Retain all your progress &amp; smart reminders
+            </p>
+</div>
+</label>
+<!-- Secondary Card 1: Switch to Monthly -->
+<label class="block relative cursor-pointer" onclick="selectPlan('monthly')">
+<input class="peer sr-only" id="plan_monthly" name="plan_option" type="radio"/>
+<div class="p-3.5 bg-surface rounded-[20px] border border-border transition-all hover:bg-surface-bright peer-checked:border-accent-fill peer-checked:bg-surface">
+<div class="flex items-center justify-between">
+<div>
+<h4 class="font-label text-[14px] font-bold text-text-primary">Switch to Monthly, $7.99</h4>
+<p class="font-caption text-[12px] text-text-secondary mt-0.5">Flexible month-to-month, pause or cancel anytime</p>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-border flex items-center justify-center flex-shrink-0 ml-2" id="radio_monthly_circle">
+<span class="material-symbols-outlined text-[14px] text-white opacity-0" id="radio_monthly_check">check</span>
+</div>
+</div>
+</div>
+</label>
+<!-- Secondary Card 2: Pause Reminders -->
+<label class="block relative cursor-pointer" onclick="selectPlan('pause')">
+<input class="peer sr-only" id="plan_pause" name="plan_option" type="radio"/>
+<div class="p-3.5 bg-surface rounded-[20px] border border-border transition-all hover:bg-surface-bright peer-checked:border-accent-fill peer-checked:bg-surface">
+<div class="flex items-center justify-between">
+<div>
+<h4 class="font-label text-[14px] font-bold text-text-primary">Pause reminders for 2 weeks instead</h4>
+<p class="font-caption text-[12px] text-text-secondary mt-0.5">Take a temporary break without losing your routine setup</p>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-border flex items-center justify-center flex-shrink-0 ml-2" id="radio_pause_circle">
+<span class="material-symbols-outlined text-[14px] text-white opacity-0" id="radio_pause_check">check</span>
+</div>
+</div>
+</div>
+</label>
+</section>
+<!-- Cancellation Reason Feedback Survey -->
+<section class="space-y-2 pt-1">
+<h4 class="font-label text-[13px] font-bold text-text-secondary">
+          Why are you leaving?
+        </h4>
+<div class="flex flex-wrap gap-2" id="feedbackChips">
+<button class="feedback-chip px-3.5 py-1.5 rounded-full font-label text-[13px] font-semibold bg-accent-tint text-accent-fill transition-all active:scale-95" onclick="toggleChip(this)" type="button">
+            Too expensive
+          </button>
+<button class="feedback-chip px-3.5 py-1.5 rounded-full font-label text-[13px] font-semibold bg-accent-tint text-accent-fill transition-all active:scale-95" onclick="toggleChip(this)" type="button">
+            Not using it
+          </button>
+<button class="feedback-chip px-3.5 py-1.5 rounded-full font-label text-[13px] font-semibold bg-accent-tint text-accent-fill transition-all active:scale-95" onclick="toggleChip(this)" type="button">
+            Too many notifications
+          </button>
+<button class="feedback-chip px-3.5 py-1.5 rounded-full font-label text-[13px] font-semibold bg-accent-tint text-accent-fill transition-all active:scale-95" onclick="toggleChip(this)" type="button">
+            Other
+          </button>
+</div>
+</section>
+</div>
+<!-- Bottom Sticky CTA Container (No bottom tab bar!) -->
+<footer class="w-full px-margin pt-2 pb-5 bg-gradient-to-t from-background via-background/95 to-transparent flex-shrink-0 flex flex-col items-center gap-2 z-30">
+<!-- Primary Pill Action Button -->
+<button class="w-full h-13 py-3.5 px-6 rounded-full bg-accent-fill hover:bg-accent-pressed active:scale-[0.98] text-white font-title text-[16px] font-bold flex items-center justify-center gap-2 shadow-md transition-all" id="claimBtn" onclick="alert('50% discount activated! Continuing routine...')">
+<span id="claimBtnText">Claim 50% off</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<!-- Secondary Plain Link Button -->
+<button class="py-1 text-center font-label text-[13px] font-semibold text-text-secondary hover:text-text-primary active:scale-95 transition-colors underline decoration-text-secondary/40 underline-offset-4" onclick="confirmCancellation()">
+        Continue to cancel
+      </button>
+<!-- iOS Home Indicator Clearance -->
+<div class="w-32 h-1 bg-text-primary/20 rounded-full mt-1"></div>
+</footer>
+</main>
+<script>
+    // Simple state handler for Win-back options
+    function selectPlan(planType) {
+      const claimBtnText = document.getElementById('claimBtnText');
+      if (planType === 'annual') {
+        claimBtnText.textContent = 'Claim 50% off';
+      } else if (planType === 'monthly') {
+        claimBtnText.textContent = 'Switch to Monthly ($7.99)';
+      } else if (planType === 'pause') {
+        claimBtnText.textContent = 'Pause Reminders for 2 Weeks';
+      }
+    }
+
+    // Interactive feedback chip toggle
+    function toggleChip(button) {
+      const isSelected = button.classList.contains('bg-accent-fill');
+      if (isSelected) {
+        button.classList.remove('bg-accent-fill', 'text-white');
+        button.classList.add('bg-accent-tint', 'text-accent-fill');
+      } else {
+        button.classList.remove('bg-accent-tint', 'text-accent-fill');
+        button.classList.add('bg-accent-fill', 'text-white');
+      }
+    }
+
+    function confirmCancellation() {
+      if (confirm("Are you sure you want to proceed with canceling? You will lose streak protections and custom dosing schedules.")) {
+        alert("Subscription cancellation scheduled at end of trial period.");
+      }
+    }
+  </script>
+</body></html>

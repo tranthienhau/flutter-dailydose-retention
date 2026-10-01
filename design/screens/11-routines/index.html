@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DailyDose - Routines</title>
+<!-- Google Fonts: Lora (Display) & Nunito Sans (Title, Body, Label) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400&amp;family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "text-primary": "#0C1F1D",
+            "surface-bright": "#f3fbfa",
+            "on-primary-fixed-variant": "#005048",
+            "accent-pressed": "#0B6E63",
+            "inverse-on-surface": "#eaf2f1",
+            "surface-container-highest": "#dce4e3",
+            "primary-fixed-dim": "#4fdbc8",
+            "on-background": "#151d1d",
+            "secondary-fixed": "#93f4e4",
+            "surface-container-high": "#e2eae9",
+            "on-primary-container": "#00423b",
+            "primary": "#006b5f",
+            "tertiary-container": "#c591d7",
+            "secondary-container": "#93f4e4",
+            "on-surface-variant": "#3c4947",
+            "border": "#D7E8E5",
+            "surface-tint": "#006b5f",
+            "on-tertiary-container": "#522765",
+            "success": "#16A34A",
+            "primary-container": "#14b8a6",
+            "on-surface": "#151d1d",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#00201c",
+            "on-tertiary-fixed": "#310344",
+            "tertiary": "#7a4c8d",
+            "surface-alt": "#EAF6F4",
+            "accent-tint": "#E3F7F4",
+            "surface": "#FFFFFF",
+            "on-secondary-fixed-variant": "#005048",
+            "on-secondary-container": "#007166",
+            "error": "#ba1a1a",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#6c7a77",
+            "on-error-container": "#93000a",
+            "text-secondary": "#4A615E",
+            "on-primary-fixed": "#00201c",
+            "inverse-primary": "#4fdbc8",
+            "secondary": "#006b60",
+            "danger": "#DC2626",
+            "warning": "#D97706",
+            "surface-container-low": "#edf5f4",
+            "on-tertiary-fixed-variant": "#603473",
+            "on-tertiary": "#ffffff",
+            "on-error": "#ffffff",
+            "accent-fill": "#0E8376",
+            "text-tertiary": "#7C918E",
+            "surface-container": "#e7efef",
+            "inverse-surface": "#2a3232",
+            "tertiary-fixed": "#f8d8ff",
+            "background": "#f3fbfa",
+            "primary-fixed": "#71f8e4",
+            "on-primary": "#ffffff",
+            "support-lilac": "#DDA8F0",
+            "tertiary-fixed-dim": "#e9b3fc",
+            "surface-variant": "#dce4e3",
+            "surface-dim": "#d4dcdb",
+            "outline-variant": "#bbcac6",
+            "secondary-fixed-dim": "#77d7c8"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "4px",
+            "margin": "20px",
+            "gutter": "16px",
+            "space-md": "16px",
+            "space-lg": "24px",
+            "space-sm": "8px",
+            "space-xl": "32px"
+          },
+          "fontFamily": {
+            "label": ["Nunito Sans", "sans-serif"],
+            "title": ["Nunito Sans", "sans-serif"],
+            "display": ["Lora", "serif"],
+            "caption": ["Nunito Sans", "sans-serif"],
+            "body": ["Nunito Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+          },
+          "boxShadow": {
+            "ambient": "0 1px 2px rgba(12,31,29,0.04), 0 8px 24px rgba(12,31,29,0.06)",
+            "ambient-sm": "0 1px 3px rgba(12,31,29,0.03), 0 4px 12px rgba(12,31,29,0.04)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 24px;
+      line-height: 1;
+      display: inline-block;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+    /* Smooth tactile scrolling */
+    body {
+      -webkit-font-smoothing: antialiased;
+      background-color: #f3fbfa;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary min-h-screen flex justify-center font-body selection:bg-accent-tint selection:text-accent-fill">
+<!-- Mobile Form Factor Container (393px iPhone viewport) -->
+<div class="w-full max-w-[393px] bg-background min-h-screen flex flex-col relative pb-28 shadow-ambient">
+<!-- Top App Bar / Safe Area Header conforming to Shared Components JSON -->
+<header class="flex justify-between items-center w-full px-5 pt-8 pb-3 bg-transparent">
+<!-- Left side: Brand identity & current context -->
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-fill text-2xl" data-icon="spa">spa</span>
+<h1 class="font-display text-title font-bold text-accent-fill tracking-tight">DailyDose</h1>
+</div>
+<!-- Right side action: Add routine (+) button with rounded tactile feedback -->
+<button aria-label="Add new routine" class="w-10 h-10 rounded-full bg-surface shadow-ambient-sm border border-border flex items-center justify-center text-accent-fill hover:bg-accent-tint active:scale-95 transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="add">add</span>
+</button>
+</header>
+<!-- Page Title & Micro Context Header -->
+<div class="px-5 pt-2 pb-4">
+<div class="flex items-baseline justify-between">
+<h2 class="font-display text-display text-text-primary tracking-tight">Routines</h2>
+<span class="font-label text-caption text-text-tertiary">4 Active</span>
+</div>
+<p class="font-body text-caption text-text-secondary mt-0.5">Mindful daily habits built for balance and vitality</p>
+</div>
+<!-- Segmented Control Bar -->
+<div class="px-5 mb-5">
+<div class="bg-surface-alt p-1 rounded-full flex items-center shadow-inner">
+<!-- Inactive Tab: Supplements -->
+<button class="flex-1 py-2 rounded-full font-label text-label text-text-secondary text-center transition-all hover:text-text-primary active:scale-98">
+          Supplements
+        </button>
+<!-- Active Tab: Workouts -->
+<button class="flex-1 py-2 rounded-full bg-accent-fill text-on-primary font-label text-label text-center shadow-sm transition-all active:scale-98 flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-base fill-icon" data-icon="fitness_center" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+          Workouts
+        </button>
+</div>
+</div>
+<!-- Main Routines Content Stream -->
+<main class="px-5 flex flex-col gap-5 flex-1">
+<!-- Focal Element: Large Featured Workout Card -->
+<section class="bg-surface rounded-lg shadow-ambient overflow-hidden border border-border/50 group">
+<!-- Hero Photo: Morning Walk -->
+<div class="relative w-full h-44 overflow-hidden">
+<img alt="Morning walk outdoors in nature" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A fit smiling young woman in an olive green jacket walking happily along a sun-dappled morning forest trail with golden sunlight filtering through misty tall trees. The setting is peaceful, lush, and serene, matching the calm natural wellness aesthetic with warm ambient morning light and fresh nature tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCc1Aii1-WOuA89406xGM-Uz2pq9NSqRObRajKGMAxC_lOcfVwlDdGnEYyx0Luw0QKEOMJUvKFsH5vTpAfP-4DQSbndrXfI1oVy00J3H4237_-16A5-D-JjT-DP0vRrKQjSGEMJq8IpAR1wkXHfnkyjWjEX2POfmhkGttahxZb2cH3_zmrQs5joxzkd6WTe7D1sC9vK5BPd14LbcIXe-yxGBHHF5-kYPxaga4gKmwzrtwxymgW5ntBwIvQKowaoPBASpYohyq1R13Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-text-primary/70 via-transparent to-black/10"></div>
+<!-- Top Tag Badge inside image -->
+<div class="absolute top-3.5 left-3.5">
+<span class="bg-surface/90 backdrop-blur-md text-accent-fill font-label text-caption px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs fill-icon" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+              TODAY'S HIGHLIGHT
+            </span>
+</div>
+<!-- Bottom Image Micro-data -->
+<div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-surface">
+<div class="flex items-center gap-1.5 font-label text-caption">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+<span>20 min • Daily at 7:30 AM</span>
+</div>
+<span class="bg-surface-tint/80 backdrop-blur-sm text-surface text-[11px] font-label px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+              Optimal
+            </span>
+</div>
+</div>
+<!-- Card Content Body -->
+<div class="p-4.5 pt-4">
+<div class="flex items-start justify-between gap-2 mb-2">
+<div>
+<h3 class="font-display text-title font-bold text-text-primary">Morning walk</h3>
+<p class="font-body text-caption text-text-secondary mt-0.5">Gentle outdoor aerobic stride &amp; fresh morning air</p>
+</div>
+<!-- Checkmark Status Pill Toggle -->
+<button aria-label="Toggle completed" class="w-8 h-8 rounded-full bg-accent-tint text-accent-fill flex items-center justify-center hover:bg-accent-fill hover:text-surface transition-colors shrink-0">
+<span class="material-symbols-outlined text-lg" data-icon="check">check</span>
+</button>
+</div>
+<!-- Divider -->
+<div class="h-px bg-surface-alt my-3"></div>
+<!-- Meta Footer: Schedule Chip & CTA Button -->
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 bg-accent-tint px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-xs text-accent-fill" data-icon="calendar_today">calendar_today</span>
+<span class="font-label text-caption text-accent-fill">Every day • Active</span>
+</div>
+<button class="font-label text-caption font-semibold text-accent-fill flex items-center gap-0.5 hover:text-accent-pressed">
+<span>Start now</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section: Your Routines Stack -->
+<section class="flex flex-col gap-3">
+<!-- Section Header -->
+<div class="flex items-center justify-between pt-1">
+<h3 class="font-label text-label uppercase tracking-wider text-text-tertiary">All Workouts</h3>
+<button class="font-label text-caption text-accent-fill hover:underline flex items-center gap-0.5">
+<span>Filter</span>
+<span class="material-symbols-outlined text-sm" data-icon="tune">tune</span>
+</button>
+</div>
+<!-- Routine Card 1: Full-body stretch -->
+<div class="bg-surface rounded-DEFAULT p-3.5 shadow-ambient border border-border/70 flex items-center gap-3.5 transition-all hover:border-accent-fill/30 active:scale-[0.99]">
+<!-- Thumbnail -->
+<div class="w-[68px] h-[68px] rounded-2xl overflow-hidden shrink-0 bg-surface-alt">
+<img alt="Authentic lifestyle photography thumbnail: A fit man stretching his arms and back calmly in a bright sunlit modern living room with wooden floors, indoor green plants, morning daylight, mindful wellness routine." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTXwihfmfKm7guRwJQGxUG2fbAl3kacJNU0ePUFgbifTIvf4DztxTtVZoKBy8A-9m_u243dnSAOlUpJG_0NGqUOtTuyIpThqxV41UDbW1csDpXO1pqLSKJ5lQ07P6gbyP9QynAXd9ff-i6_3HBMLk_Z-DYTKaWCBqWQOYTiZ3T0-QcxRWyTamFdqFebnpojcLok3N3sFWFeQpU94dUdTVcveb16SicLNgl0TXYQWJ_wM4LM2Vd_P1Jo0itw2msO6lwSN_Mtwkaj7g"/>
+</div>
+<!-- Info Details -->
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-1">
+<h4 class="font-title text-[16px] leading-5 font-semibold text-text-primary truncate">Full-body stretch</h4>
+<span class="material-symbols-outlined text-text-tertiary text-lg shrink-0" data-icon="more_horiz">more_horiz</span>
+</div>
+<p class="font-body text-caption text-text-secondary mt-0.5">10 min • Bedtime mobility</p>
+<div class="mt-2 inline-flex items-center gap-1 bg-accent-tint text-accent-fill px-2.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]" data-icon="alarm">alarm</span>
+<span class="font-label text-[12px] font-semibold">Daily 9:45 PM</span>
+</div>
+</div>
+</div>
+<!-- Routine Card 2: Core strength -->
+<div class="bg-surface rounded-DEFAULT p-3.5 shadow-ambient border border-border/70 flex items-center gap-3.5 transition-all hover:border-accent-fill/30 active:scale-[0.99]">
+<!-- Thumbnail -->
+<div class="w-[68px] h-[68px] rounded-2xl overflow-hidden shrink-0 bg-surface-alt">
+<img alt="Authentic lifestyle photography thumbnail: A woman holding a strong clean forearm plank on a neutral yoga mat in a bright airy studio apartment, calm focus, natural daylight, wellness and fitness routine." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlizxyWYTd1wC2ZNdJw9rO5iCjjb_3oPovyOt0Rn1c1I5CdwWU29IIWVUG20UbZDxIxsjg50jbVGP2UJxnWWGe8cLUf-ApuY60UvkYl0EBqeDcY06pHxOr_B8HwxH4b1D0CthjDvJzpeZ2c8P7rp4isD351hsjWaWysJc8XzXjk4oMWV0ugjeFZwIeljlI6FhvSAHG-0O3AXyV76gavxh4fM4RDlK5pYxL0QBXf4lV_f1x2DxmpYE0m3ES3_D6NBUN1oNXgS7L-Z0"/>
+</div>
+<!-- Info Details -->
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-1">
+<h4 class="font-title text-[16px] leading-5 font-semibold text-text-primary truncate">Core strength</h4>
+<span class="material-symbols-outlined text-text-tertiary text-lg shrink-0" data-icon="more_horiz">more_horiz</span>
+</div>
+<p class="font-body text-caption text-text-secondary mt-0.5">15 min • High focus</p>
+<div class="mt-2 inline-flex items-center gap-1 bg-accent-tint text-accent-fill px-2.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]" data-icon="event_repeat">event_repeat</span>
+<span class="font-label text-[12px] font-semibold">Mon, Wed, Fri 8:00 AM</span>
+</div>
+</div>
+</div>
+<!-- Routine Card 3: Evening yoga -->
+<div class="bg-surface rounded-DEFAULT p-3.5 shadow-ambient border border-border/70 flex items-center gap-3.5 transition-all hover:border-accent-fill/30 active:scale-[0.99]">
+<!-- Thumbnail -->
+<div class="w-[68px] h-[68px] rounded-2xl overflow-hidden shrink-0 bg-surface-alt">
+<img alt="Woman stretching in calm living room for evening yoga routine" class="w-full h-full object-cover" data-alt="A serene young woman peacefully stretching in a gentle low lunge on a yoga mat in a cozy bright living room surrounded by house plants and soft warm natural window daylight. The atmosphere conveys relaxation, mindfulness, and calm mindful evening stretching routines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8rKt_t31-_lz91oD17V2wM2Am7ZmYXOnLYvBD3A9v87wAWrfr0tFXbVWz_NYWFEYf4L_88CHEX8gj8A8FKnXe2MmmYISZZ2I0IfwbaRYgAUHRR7h_xurExQun6kFHx1o1s_w9hXr-PHqBHhH5TMZ6d_-OHekVmgW_fucN-VRcb_oToZrSSzvAWXfDgf1qbyi-1v0qxKPAyfyQCt-CcXcK3UQl7NgrUj5hfP1zbJwPxGEP98d0afAbY4i9AFvG61WZcC06OcSK3Fo"/>
+</div>
+<!-- Info Details -->
+<div class="flex-1 min-w-0">
+<div class="flex items-start justify-between gap-1">
+<h4 class="font-title text-[16px] leading-5 font-semibold text-text-primary truncate">Evening yoga</h4>
+<span class="material-symbols-outlined text-text-tertiary text-lg shrink-0" data-icon="more_horiz">more_horiz</span>
+</div>
+<p class="font-body text-caption text-text-secondary mt-0.5">12 min • Rest &amp; unwind</p>
+<div class="mt-2 inline-flex items-center gap-1 bg-accent-tint text-accent-fill px-2.5 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]" data-icon="nights_stay">nights_stay</span>
+<span class="font-label text-[12px] font-semibold">Tue, Thu, Sun 9:00 PM</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Weekly Completion Micro Banner -->
+<section class="bg-surface-alt rounded-DEFAULT p-4 flex items-center justify-between border border-border/60 mt-1 mb-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-accent-tint flex items-center justify-center text-accent-fill">
+<span class="material-symbols-outlined text-xl" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<h5 class="font-label text-label text-text-primary">Weekly streak</h5>
+<p class="font-body text-caption text-text-secondary">5 days completed this week</p>
+</div>
+</div>
+<span class="font-display text-title font-bold text-accent-fill">92%</span>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Fixed 4-tab bar per Design Specifications) -->
+<!-- Order: 1. Today, 2. Routines (ACTIVE), 3. Progress, 4. Profile -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-[393px] mx-auto bg-surface border-t border-border z-50 px-3 pt-2 pb-6">
+<div class="flex items-center justify-around">
+<!-- Tab 1: Today (Inactive) -->
+<a class="flex flex-col items-center justify-center py-1 px-3 text-text-tertiary hover:opacity-80 transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-2xl group-hover:text-text-secondary" data-icon="wb_sunny">wb_sunny</span>
+<span class="font-label text-[11px] mt-1 tracking-tight">Today</span>
+</a>
+<!-- Tab 2: Routines (ACTIVE in #0E8376 icon + text label font-semibold) -->
+<a class="flex flex-col items-center justify-center py-1 px-3 text-accent-fill active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined text-2xl fill-icon" data-icon="checklist" style="font-variation-settings: 'FILL' 1;">checklist</span>
+<span class="font-label text-[11px] mt-1 font-semibold tracking-tight">Routines</span>
+</a>
+<!-- Tab 3: Progress (Inactive) -->
+<a class="flex flex-col items-center justify-center py-1 px-3 text-text-tertiary hover:opacity-80 transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-2xl group-hover:text-text-secondary" data-icon="show_chart">show_chart</span>
+<span class="font-label text-[11px] mt-1 tracking-tight">Progress</span>
+</a>
+<!-- Tab 4: Profile (Inactive) -->
+<a class="flex flex-col items-center justify-center py-1 px-3 text-text-tertiary hover:opacity-80 transition-all active:scale-95 group" href="#">
+<span class="material-symbols-outlined text-2xl group-hover:text-text-secondary" data-icon="person">person</span>
+<span class="font-label text-[11px] mt-1 tracking-tight">Profile</span>
+</a>
+</div>
+<!-- iOS Home Bar Indicator indicator mimic -->
+<div class="w-32 h-1 bg-text-primary/10 rounded-full mx-auto mt-2"></div>
+</nav>
+</div>
+<script>
+    // Subtle tactile response for routine cards and toggle buttons
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        // Micro-ripple or active highlight
+        if(this.getAttribute('aria-label') === 'Toggle completed') {
+          const icon = this.querySelector('.material-symbols-outlined');
+          if (icon.textContent === 'check') {
+            icon.textContent = 'done_all';
+            this.classList.remove('bg-accent-tint', 'text-accent-fill');
+            this.classList.add('bg-accent-fill', 'text-surface');
+          } else {
+            icon.textContent = 'check';
+            this.classList.add('bg-accent-tint', 'text-accent-fill');
+            this.classList.remove('bg-accent-fill', 'text-surface');
+          }
+        }
+      });
+    });
+  </script>
+</body></html>

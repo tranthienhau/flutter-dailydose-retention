@@ -1,0 +1,252 @@
+[
+ {
+  "name": "avatar-maya-profile",
+  "file": "assets/images/avatar-maya-profile.jpg",
+  "role": "avatar",
+  "screens": [
+   "14-profile"
+  ],
+  "source": "stitch",
+  "prompt": "Maya Collins portrait smiling warmly in soft daylight",
+  "size": [
+   512,
+   512
+  ],
+  "bytes": 42462
+ },
+ {
+  "name": "avatar-maya-recovery",
+  "file": "assets/images/avatar-maya-recovery.jpg",
+  "role": "avatar",
+  "screens": [
+   "20-push-recovery"
+  ],
+  "source": "stitch",
+  "prompt": "Maya Collins",
+  "bytes": 41257
+ },
+ {
+  "name": "avatar-maya-today",
+  "file": "assets/images/avatar-maya-today.jpg",
+  "role": "avatar",
+  "screens": [
+   "07-today"
+  ],
+  "source": "stitch",
+  "prompt": "Maya profile",
+  "size": [
+   382,
+   512
+  ],
+  "bytes": 31438
+ },
+ {
+  "name": "goal-hydration",
+  "file": "assets/images/goal-hydration.jpg",
+  "role": "thumbnail",
+  "screens": [
+   "02-goal-pick"
+  ],
+  "source": "stitch",
+  "prompt": "Hydration",
+  "size": [
+   800,
+   800
+  ],
+  "bytes": 66613
+ },
+ {
+  "name": "goal-sleep",
+  "file": "assets/images/goal-sleep.jpg",
+  "role": "thumbnail",
+  "screens": [
+   "02-goal-pick"
+  ],
+  "source": "stitch",
+  "prompt": "Sleep",
+  "size": [
+   800,
+   800
+  ],
+  "bytes": 94513
+ },
+ {
+  "name": "goal-supplements",
+  "file": "assets/images/goal-supplements.jpg",
+  "role": "thumbnail",
+  "screens": [
+   "02-goal-pick"
+  ],
+  "source": "stitch",
+  "prompt": "Supplements",
+  "size": [
+   800,
+   800
+  ],
+  "bytes": 97084
+ },
+ {
+  "name": "goal-workouts",
+  "file": "assets/images/goal-workouts.jpg",
+  "role": "thumbnail",
+  "screens": [
+   "02-goal-pick"
+  ],
+  "source": "stitch",
+  "prompt": "Workouts",
+  "size": [
+   800,
+   800
+  ],
+  "bytes": 107481
+ },
+ {
+  "name": "hero-paywall-b-man",
+  "file": "assets/images/hero-paywall-b-man.jpg",
+  "role": "hero",
+  "screens": [
+   "15-paywall-b"
+  ],
+  "source": "stitch",
+  "prompt": "Authentic high quality editorial lifestyle photograph: A smiling man in his early 40s with a warm, natural expression holding a single supplement capsule and a clear glass of water in a bright, sunlit modern kitchen during morning light. Clean Scandinavian interior with light wood and subtle plant in the background, soft warm daylight, crisp natural skin texture, editorial wellness aesthetic. Zero 3D render, zero CGI, zero illustration, realistic photography.",
+  "bytes": 87907
+ },
+ {
+  "name": "hero-welcome-kitchen",
+  "file": "assets/images/hero-welcome-kitchen.jpg",
+  "role": "hero",
+  "screens": [
+   "01-welcome"
+  ],
+  "source": "stitch",
+  "prompt": "Woman smiling in warm kitchen holding water glass and routine supplements",
+  "size": [
+   896,
+   1200
+  ],
+  "bytes": 102286
+ },
+ {
+  "name": "photo-empty-organizer",
+  "file": "assets/images/photo-empty-organizer.jpg",
+  "role": "illustration",
+  "screens": [
+   "08-today-empty"
+  ],
+  "source": "stitch",
+  "prompt": "Authentic high-quality editorial lifestyle photograph: A close-up shot of an empty open weekly pill organizer (with Monday through Sunday compartments open and empty) resting on a clean light white marble kitchen counter. Next to it sits a clear glass of fresh water with subtle condensation. Warm, soft morning window light streaming across the counter, calm and clean wellness morning aesthetic. In the soft blurred background (shallow depth of field), subtle accents of soft sea teal (#14B8A6) and gentle lilac (#DDA8F0) visible in a linen kitchen cloth napkin or ceramic mug. Real professional photography, authentic natural morning daylight, realistic textures, zero 3D rendering, zero CGI, zero claymorphism, crisp realistic focus.",
+  "bytes": 60645
+ },
+ {
+  "name": "photo-push-lockscreen",
+  "file": "assets/images/photo-push-lockscreen.jpg",
+  "role": "hero",
+  "screens": [
+   "04-push-primer"
+  ],
+  "source": "stitch",
+  "prompt": "Authentic high-quality editorial lifestyle photograph: A close-up point-of-view shot of a woman's hand holding a modern smartphone (iPhone) in a bright, sun-drenched Scandinavian modern kitchen during calm morning golden hour. On the smartphone lock screen, there is a realistic iOS notification card displayed clearly: a white rounded card with a subtle green leaf app icon and text reading 'DailyDose \u2022 8:00 AM' and 'Vitamin D3 \u2022 Time for your daily dose'. In the soft blurred background (shallow depth of field), a light wooden or marble kitchen countertop with a glass of water, amber supplement bottle, and subtle touches of soft teal (#14B8A6) and gentle lilac (#DDA8F0) ceramic mug or cloth napkin. Real photography, warm natural morning window light, realistic skin texture, zero 3D rendering, zero CGI, zero claymorphism, crisp realistic focus.",
+  "bytes": 84888
+ },
+ {
+  "name": "product-vitamin-d3",
+  "file": "assets/images/product-vitamin-d3.jpg",
+  "role": "cover",
+  "screens": [
+   "10-supplement-detail"
+  ],
+  "source": "stitch",
+  "prompt": "Amber glass bottle of Vitamin D3 2000 IU softgels on linen tabletop",
+  "size": [
+   1200,
+   896
+  ],
+  "bytes": 82872
+ },
+ {
+  "name": "thumb-vitamin-bottle",
+  "file": "assets/images/thumb-vitamin-bottle.jpg",
+  "role": "thumbnail",
+  "screens": [
+   "05-sign-up"
+  ],
+  "source": "stitch",
+  "prompt": "Daily wellness vitamin bottle on wooden table",
+  "size": [
+   800,
+   800
+  ],
+  "bytes": 97084
+ },
+ {
+  "name": "wallpaper-lockscreen-park",
+  "file": "assets/images/wallpaper-lockscreen-park.jpg",
+  "role": "hero",
+  "screens": [
+   "16-push-sequence"
+  ],
+  "source": "stitch",
+  "prompt": "Calm scenic park with morning mist and golden sunrise",
+  "bytes": 198138
+ },
+ {
+  "name": "workout-core-plank",
+  "file": "assets/images/workout-core-plank.jpg",
+  "role": "thumbnail",
+  "screens": [
+   "11-routines"
+  ],
+  "source": "stitch",
+  "prompt": "Authentic lifestyle photography thumbnail: A woman holding a strong clean forearm plank on a neutral yoga mat in a bright airy studio apartment, calm focus, natural daylight, wellness and fitness routine.",
+  "size": [
+   800,
+   800
+  ],
+  "bytes": 78297
+ },
+ {
+  "name": "workout-evening-yoga",
+  "file": "assets/images/workout-evening-yoga.jpg",
+  "role": "thumbnail",
+  "screens": [
+   "11-routines"
+  ],
+  "source": "stitch",
+  "prompt": "Woman stretching in calm living room for evening yoga routine",
+  "size": [
+   800,
+   436
+  ],
+  "bytes": 66837
+ },
+ {
+  "name": "workout-morning-walk",
+  "file": "assets/images/workout-morning-walk.jpg",
+  "role": "cover",
+  "screens": [
+   "11-routines"
+  ],
+  "source": "stitch",
+  "prompt": "Morning walk outdoors in nature",
+  "size": [
+   1200,
+   655
+  ],
+  "bytes": 207942
+ },
+ {
+  "name": "workout-stretch",
+  "file": "assets/images/workout-stretch.jpg",
+  "role": "thumbnail",
+  "screens": [
+   "11-routines"
+  ],
+  "source": "stitch",
+  "prompt": "Authentic lifestyle photography thumbnail: A fit man stretching his arms and back calmly in a bright sunlit modern living room with wooden floors, indoor green plants, morning daylight, mindful wellness routine.",
+  "size": [
+   800,
+   800
+  ],
+  "bytes": 99904
+ }
+]

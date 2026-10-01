@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DailyDose - Welcome</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,300..900;1,6..12,300..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#FFFFFF",
+            "surface-container-low": "#edf5f4",
+            "outline": "#6c7a77",
+            "accent-tint": "#E3F7F4",
+            "on-secondary-fixed": "#00201c",
+            "surface-container": "#e7efef",
+            "on-secondary-container": "#007166",
+            "on-primary": "#ffffff",
+            "on-error": "#ffffff",
+            "surface-dim": "#d4dcdb",
+            "on-tertiary-fixed-variant": "#603473",
+            "surface-container-high": "#e2eae9",
+            "inverse-surface": "#2a3232",
+            "success": "#16A34A",
+            "accent-fill": "#0E8376",
+            "error": "#ba1a1a",
+            "text-primary": "#0C1F1D",
+            "text-tertiary": "#7C918E",
+            "tertiary-container": "#c591d7",
+            "background": "#f3fbfa",
+            "primary-container": "#14b8a6",
+            "tertiary": "#7a4c8d",
+            "secondary-container": "#93f4e4",
+            "on-tertiary-fixed": "#310344",
+            "inverse-primary": "#4fdbc8",
+            "warning": "#D97706",
+            "on-background": "#151d1d",
+            "accent-pressed": "#0B6E63",
+            "outline-variant": "#bbcac6",
+            "surface-bright": "#f3fbfa",
+            "surface-container-highest": "#dce4e3",
+            "on-error-container": "#93000a",
+            "on-tertiary-container": "#522765",
+            "primary-fixed-dim": "#4fdbc8",
+            "on-surface": "#151d1d",
+            "on-primary-fixed-variant": "#005048",
+            "on-surface-variant": "#3c4947",
+            "inverse-on-surface": "#eaf2f1",
+            "surface-variant": "#dce4e3",
+            "error-container": "#ffdad6",
+            "on-primary-fixed": "#00201c",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#e9b3fc",
+            "surface-tint": "#006b5f",
+            "tertiary-fixed": "#f8d8ff",
+            "surface-container-lowest": "#ffffff",
+            "support-lilac": "#DDA8F0",
+            "on-secondary": "#ffffff",
+            "secondary": "#006b60",
+            "on-primary-container": "#00423b",
+            "text-secondary": "#4A615E",
+            "secondary-fixed-dim": "#77d7c8",
+            "danger": "#DC2626",
+            "border": "#D7E8E5",
+            "primary": "#006b5f",
+            "secondary-fixed": "#93f4e4",
+            "on-secondary-fixed-variant": "#005048",
+            "surface-alt": "#EAF6F4",
+            "primary-fixed": "#71f8e4"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "32px",
+            "space-sm": "8px",
+            "gutter": "16px",
+            "space-xs": "4px",
+            "space-md": "16px",
+            "margin": "20px",
+            "space-lg": "24px"
+          },
+          "fontFamily": {
+            "display": [
+              "Lora", "serif"
+            ],
+            "caption": [
+              "Nunito Sans", "sans-serif"
+            ],
+            "title": [
+              "Nunito Sans", "sans-serif"
+            ],
+            "label": [
+              "Nunito Sans", "sans-serif"
+            ],
+            "body": [
+              "Nunito Sans", "sans-serif"
+            ]
+          },
+          "fontSize": {
+            "display": [
+              "32px",
+              {
+                "lineHeight": "40px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "700"
+              }
+            ],
+            "caption": [
+              "13px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "500"
+              }
+            ],
+            "title": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "label": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "fontWeight": "600"
+              }
+            ],
+            "body": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "400"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .hero-mask {
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 68%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 68%, rgba(0,0,0,0) 100%);
+    }
+    .shadow-soft-elevation {
+      box-shadow: 0 1px 2px rgba(12,31,29,0.04), 0 8px 24px rgba(12,31,29,0.08);
+    }
+  </style>
+</head>
+<body class="bg-surface-container-low min-h-screen flex items-center justify-center sm:py-8 font-body antialiased selection:bg-accent-tint selection:text-accent-fill">
+<!-- iPhone Canvas Frame (393px × 852px) -->
+<main class="relative w-full max-w-[393px] h-[852px] bg-background overflow-hidden flex flex-col justify-between shadow-2xl sm:rounded-[48px] border border-outline-variant/30">
+<!-- Top Hero Visual Area (~58-60% of vertical height) -->
+<div class="relative w-full h-[58%] overflow-hidden flex-shrink-0 select-none">
+<!-- Hero Photograph -->
+<img alt="Woman smiling in warm kitchen holding water glass and routine supplements" class="absolute inset-0 w-full h-full object-cover object-center hero-mask" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEww6AA5mFk1iS8cmOk9l2rCxKU1wyg1c3ZmMTj4g5WXu3KIbQUz5G5wT7ciP8xmVFAr7VghA7oYcdvot17qQcAOyUp7GiiDLZvk_MXNVW4l8S_8Jwr0pyuUXOtOsPAw-LX8EnjWbgHfkPFdExYqw-Y2vKsbrgMBMy0vENTSt2v3qkb__4gopyIeFAmC2az5I8liknfoCnbLC92oxgabvAdG9rhRHdKHHdAb_6KD4xSIDEmIGicsS2DG7LP95cjN8sQbwBR7xw_dY"/>
+<!-- Subtle Radial Highlight & Bottom Seamless Fog Overlay to #F3FBFA (background) -->
+<div class="absolute inset-0 bg-gradient-to-b from-text-primary/25 via-transparent to-background pointer-events-none"></div>
+<!-- TopAppBar Component (from Shared Components JSON: small_center_aligned, headline: DailyDose) -->
+<header class="docked full-width top-0 bg-transparent flex justify-between items-center w-full px-5 py-4 pt-safe z-10 relative">
+<div class="flex items-center gap-2">
+<!-- Leading Icon -->
+<div class="w-9 h-9 rounded-full bg-surface/80 backdrop-blur-md flex items-center justify-center text-accent-fill shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="spa">spa</span>
+</div>
+<span class="font-display text-title font-bold text-accent-fill tracking-tight drop-shadow-xs">DailyDose</span>
+</div>
+<!-- Right Ambient Pill Status Indicator -->
+<div class="px-3 py-1 rounded-full bg-surface/80 backdrop-blur-md flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label text-caption font-semibold text-text-secondary">Routine</span>
+</div>
+</header>
+</div>
+<!-- Bottom Content Journey Section -->
+<div class="relative z-10 w-full flex-1 flex flex-col justify-between px-margin pt-2 pb-8 bg-background">
+<!-- Content Stack -->
+<div class="flex flex-col space-y-3">
+<!-- Badge Indicator -->
+<div class="inline-flex items-center self-start gap-1.5 px-3 py-1 rounded-full bg-accent-tint text-accent-fill">
+<span class="material-symbols-outlined text-[16px]" data-icon="timer">timer</span>
+<span class="font-label text-caption font-bold tracking-wide">60-second setup</span>
+</div>
+<!-- Headline -->
+<h1 class="font-display text-display font-bold text-text-primary tracking-tight leading-[1.18]">
+          Build your daily routine in 60 seconds
+        </h1>
+<!-- Subtitle Caption -->
+<p class="font-body text-body text-text-secondary leading-relaxed">
+          Supplements, workouts and reminders in one place
+        </p>
+</div>
+<!-- Action Group -->
+<div class="w-full flex flex-col items-center space-y-3.5 pt-2">
+<!-- Primary CTA Button -->
+<button class="w-full py-4 px-6 rounded-full bg-accent-fill hover:bg-accent-pressed active:scale-[0.98] text-on-primary font-title text-[16px] font-bold text-center tracking-tight transition-all duration-150 shadow-soft-elevation flex items-center justify-center gap-2" type="button">
+<span>Get started</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Secondary Text Link -->
+<button class="py-2 px-4 rounded-full text-accent-fill hover:text-accent-pressed font-label text-label font-semibold transition-opacity duration-150 active:scale-95" type="button">
+          I already have an account
+        </button>
+</div>
+<!-- iOS Home Indicator Safe Area Bar (~34px safe area) -->
+<div class="w-full flex justify-center pt-2">
+<div class="w-32 h-1 bg-outline-variant/50 rounded-full"></div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DailyDose Goal Picker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,600&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            appBg: '#F4FCFB',
+            accent: '#14B8A6',
+            accentFill: '#0E8376',
+            accentFillPressed: '#0B6E63',
+            accentTint: '#E3F7F4',
+            surface: '#FFFFFF',
+            surfaceAlt: '#EAF6F4',
+            textPrimary: '#0C1F1D',
+            textSecondary: '#4A615E',
+            textTertiary: '#7C918E',
+            borderCustom: '#D7E8E5',
+          },
+          fontFamily: {
+            serif: ['Lora', 'serif'],
+            sans: ['"Nunito Sans"', 'sans-serif'],
+          },
+          boxShadow: {
+            card: '0 1px 2px rgba(12,31,29,0.04), 0 8px 24px rgba(12,31,29,0.06)',
+            selected: '0 4px 20px rgba(14,131,118,0.18)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      background-color: #F4FCFB;
+      color: #0C1F1D;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-lora {
+      font-family: 'Lora', serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#F4FCFB] flex justify-center items-center p-0 m-0">
+
+  <!-- iPhone frame (393px width, safe margins) -->
+  <div class="w-full max-w-[393px] h-[852px] bg-[#F4FCFB] flex flex-col justify-between relative overflow-hidden px-5 pt-[56px] pb-[34px] box-border select-none">
+    
+    <!-- Top Navigation & Progress -->
+    <div>
+      <div class="flex items-center justify-between mb-6">
+        <!-- Back icon button -->
+        <button class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-textSecondary hover:bg-surfaceAlt active:scale-95 transition-transform" aria-label="Back">
+          <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+        </button>
+
+        <!-- 3 Progress Dots (First active pill) -->
+        <div class="flex items-center gap-1.5">
+          <div class="w-6 h-2 bg-accent rounded-full transition-all"></div>
+          <div class="w-2 h-2 bg-[#D7E8E5] rounded-full"></div>
+          <div class="w-2 h-2 bg-[#D7E8E5] rounded-full"></div>
+        </div>
+
+        <!-- Skip button -->
+        <button class="text-sm font-semibold text-textTertiary hover:text-accentFill transition-colors px-2 py-1">
+          Skip
+        </button>
+      </div>
+
+      <!-- Header Content -->
+      <div class="mt-1 mb-6">
+        <h1 class="font-lora text-[28px] leading-[34px] font-bold text-textPrimary tracking-[-0.02em]">
+          What do you want to stay on top of?
+        </h1>
+        <p class="mt-2 text-[15px] font-medium text-textSecondary">
+          Pick all that apply
+        </p>
+      </div>
+
+      <!-- 2x2 Grid of Selectable Image Tiles -->
+      <div class="grid grid-cols-2 gap-3.5">
+        
+        <!-- Tile 1: Supplements (SELECTED) -->
+        <div class="group relative bg-white rounded-[20px] overflow-hidden shadow-card border-2 border-accentFill ring-2 ring-accentFill/10 cursor-pointer active:scale-[0.98] transition-all flex flex-col">
+          <!-- Image Container -->
+          <div class="relative w-full aspect-[1/1] overflow-hidden bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD13UGHRecT78OEN-vkc1hbCQBnSAPrst-zFhxqpAV-5TL1LnO0E_mvG2F4FbmIvFfFCx06G_uxctDEW6Q2-lvXPkCiaLnCaQE4oZGc0ijm279YTOonO_RDdMYHrEQzE79e7p_ucutc7yE2ZGMtt6xB0DWaScP2n4CrOVQEyBrAFk0vCECKqzxHvTvJRUoSf8om60Dj2CbZOeDwt5921AOHSE5tNUtVEh1yfibRyjzlCF4QC4fBa2WXOIz282xR4n4WVTyIG_bCc64" alt="Supplements" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            
+            <!-- Selected Check Badge -->
+            <div class="absolute top-2.5 right-2.5 w-6 h-6 rounded-full bg-accentFill text-white flex items-center justify-center shadow-md">
+              <span class="material-symbols-outlined text-[16px] font-bold">check</span>
+            </div>
+          </div>
+          <!-- Label & subtitle -->
+          <div class="p-3 bg-white flex flex-col">
+            <span class="font-bold text-[15px] text-textPrimary">Supplements</span>
+            <span class="text-[12px] font-semibold text-accentFill">Vitamins & herbs</span>
+          </div>
+        </div>
+
+        <!-- Tile 2: Workouts (Unselected) -->
+        <div class="group relative bg-white rounded-[20px] overflow-hidden shadow-card border border-borderCustom hover:border-accent/50 cursor-pointer active:scale-[0.98] transition-all flex flex-col">
+          <!-- Image Container -->
+          <div class="relative w-full aspect-[1/1] overflow-hidden bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5ksUjQRgeSCDjPyEKcaJMsTdyCn3nfIs8EZGySJHXQkBehPkDsoW6pIHBbX7vncEBuRtJFqU1qpaX92VXLwqm7M1nQjiO3obfg9gpzLf82ixtN08YccaZeV2KfWvy9izgtWRNfzh5Z2swfNIsiaGOi41Hv9UnJv28ZwV9faGF7QeeZ0pliku5wr5fzMCp7jvmO7caSs1gbbrtjCJwu0_wTQcFmKC6l3aNFFQ5N9wykil_8jSqPOan4E5zqUW814Mlw-WJwmKlurI" alt="Workouts" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+            
+            <!-- Empty Check Indicator -->
+            <div class="absolute top-2.5 right-2.5 w-6 h-6 rounded-full bg-white/90 backdrop-blur-sm border border-borderCustom flex items-center justify-center">
+            </div>
+          </div>
+          <!-- Label & subtitle -->
+          <div class="p-3 bg-white flex flex-col">
+            <span class="font-bold text-[15px] text-textPrimary">Workouts</span>
+            <span class="text-[12px] font-medium text-textTertiary">Yoga & movement</span>
+          </div>
+        </div>
+
+        <!-- Tile 3: Hydration (Unselected) -->
+        <div class="group relative bg-white rounded-[20px] overflow-hidden shadow-card border border-borderCustom hover:border-accent/50 cursor-pointer active:scale-[0.98] transition-all flex flex-col">
+          <!-- Image Container -->
+          <div class="relative w-full aspect-[1/1] overflow-hidden bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbyat7sYAP1UdVj7O6X_kGrvs9kq2uTyZilze5TWvDuNR6qfHnVMtKfvIDY35TK-8bnl3Emkp2LlkzqfyNOmIhzQGpzMIi6MZW9i1gpSpRwyg8dhTpabCtr8jJz9vrkT6cOjknTE-PULWJplj8GXCsa0YfGgNjOE8qhKmGc2m5LKNjnwXG8Ir3_pDYOXcrd8UTx7EVRhGev4h9ZhCZ7jVfV-ZC8XF2b49Q6kTcaFOqZ3LCMArKGZf7_OSpd4-N1Pc_cFLOv1LbPbM" alt="Hydration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+            
+            <!-- Empty Check Indicator -->
+            <div class="absolute top-2.5 right-2.5 w-6 h-6 rounded-full bg-white/90 backdrop-blur-sm border border-borderCustom flex items-center justify-center">
+            </div>
+          </div>
+          <!-- Label & subtitle -->
+          <div class="p-3 bg-white flex flex-col">
+            <span class="font-bold text-[15px] text-textPrimary">Hydration</span>
+            <span class="text-[12px] font-medium text-textTertiary">Daily water goals</span>
+          </div>
+        </div>
+
+        <!-- Tile 4: Sleep (Unselected) -->
+        <div class="group relative bg-white rounded-[20px] overflow-hidden shadow-card border border-borderCustom hover:border-accent/50 cursor-pointer active:scale-[0.98] transition-all flex flex-col">
+          <!-- Image Container -->
+          <div class="relative w-full aspect-[1/1] overflow-hidden bg-slate-100">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbcAhGOD5vSyxF90Xi-b4fZaYM1oJvt4dq8v8rAtX2ZYWQKXerE4Cdh5ZbH1nYmRM4wDvqsS7a2DxhJm7PyeyzLghamwAr8Tc0v6vCTy3tZ2EFWADG5q-3prU5IQXEdkEz_GPD5UCeBWyd-iRMRhe7yNlLCejqd9PskMc4dX5Sk2kpHmzziOBrgjY5EVu-ujMe6loVThRQFkxzBfFdwJEGFIt5eB11Dv29EMv02uwLWFvIfFtw7fvIlW6Xc6awgAmVNMm2F_Y9usk" alt="Sleep" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+            
+            <!-- Empty Check Indicator -->
+            <div class="absolute top-2.5 right-2.5 w-6 h-6 rounded-full bg-white/90 backdrop-blur-sm border border-borderCustom flex items-center justify-center">
+            </div>
+          </div>
+          <!-- Label & subtitle -->
+          <div class="p-3 bg-white flex flex-col">
+            <span class="font-bold text-[15px] text-textPrimary">Sleep</span>
+            <span class="text-[12px] font-medium text-textTertiary">Rest & wind-down</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Action Area (Full width pill CTA + Home Indicator) -->
+    <div class="w-full flex flex-col items-center pt-3">
+      <button class="w-full h-14 bg-accentFill hover:bg-accentFillPressed active:scale-[0.98] text-white font-bold text-[16px] rounded-full shadow-md flex items-center justify-center gap-2 transition-all">
+        <span>Continue</span>
+        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+      </button>
+
+      <!-- Subtext note -->
+      <p class="mt-3 text-[12px] font-semibold text-textTertiary text-center">
+        You can always adjust these later in Settings
+      </p>
+
+      <!-- iPhone Home Indicator Bar -->
+      <div class="w-32 h-1 bg-textPrimary/20 rounded-full mt-3"></div>
+    </div>
+
+  </div>
+
+</body>
+</html>

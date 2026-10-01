@@ -1,0 +1,284 @@
+{
+ "title": "DailyDose",
+ "slug": "dailydose-routines",
+ "domain": "health",
+ "style": "bright",
+ "features": [
+  "daily supplement reminders",
+  "workout routines",
+  "habit streaks",
+  "value-first onboarding: first reminder before sign-up",
+  "push permission primer after first reminder",
+  "RevenueCat 7-day trial paywall",
+  "trial-end reminder",
+  "notification preferences for day 1/3/7 sequences",
+  "paywall A/B variant (RevenueCat offering)",
+  "push sequence day 1/3/5/7 with Done/Snooze actions",
+  "daily evening check-in with mood + energy",
+  "streak celebration after check-in",
+  "win-back promotional offer on cancel",
+  "push-denied recovery banner"
+ ],
+ "screenCount": 20,
+ "sharedComponents": {
+  "bottomTabBar": {
+   "tabs": [
+    "Today",
+    "Routines",
+    "Progress",
+    "Profile"
+   ],
+   "note": "icons: sun, list-checks, chart-line, user. Rounded outline 24px. Active = accent #0E8376 icon+label, inactive = #7C918E. Flat white bar, hairline top border."
+  },
+  "controls": "primary pill button accentFill #0E8376 white label (pressed #0B6E63, disabled 40%); secondary pill outline #0E8376; input 12px radius, focus = accent ring, error = #DC2626; card 20px radius white soft shadow; chip pill #E3F7F4 with #0E8376 text"
+ },
+ "screens": [
+  {
+   "name": "welcome",
+   "group": "onboarding",
+   "nav": "none",
+   "states": [
+    "default"
+   ],
+   "purpose": "first impression, promise the habit",
+   "content": "hero photo of smiling woman taking vitamins at sunny kitchen counter, Lora headline 'Build your daily routine in 60 seconds', caption 'Supplements, workouts, reminders', primary 'Get started', link 'I have an account'"
+  },
+  {
+   "name": "goal-pick",
+   "group": "onboarding",
+   "nav": "none",
+   "states": [
+    "default"
+   ],
+   "purpose": "pick what to track",
+   "content": "progress dots 1/3, title 'What do you want to stay on top of?', 2x2 selectable image tiles: Supplements (selected), Workouts, Hydration, Sleep; primary 'Continue'"
+  },
+  {
+   "name": "first-reminder",
+   "group": "onboarding",
+   "nav": "none",
+   "states": [
+    "default"
+   ],
+   "purpose": "set first reminder before sign-up (activation event)",
+   "content": "progress 2/3, title 'Set your first reminder', big focal time picker 8:00 AM, supplement chips Vitamin D3 (selected), Omega-3, Magnesium, Multivitamin, day chips Mon-Sun all on, primary 'Save my reminder'"
+  },
+  {
+   "name": "push-primer",
+   "group": "onboarding",
+   "nav": "none",
+   "states": [
+    "default"
+   ],
+   "purpose": "soft ask before iOS push prompt",
+   "content": "progress 3/3, focal real photo of a hand holding an iPhone with notification card 'Vitamin D3 - 8:00 AM, time for your daily dose', title 'Never miss your 8:00 AM dose', 3 benefit rows, primary 'Turn on reminders', text 'Not now'"
+  },
+  {
+   "name": "sign-up",
+   "group": "onboarding",
+   "nav": "none",
+   "states": [
+    "default"
+   ],
+   "purpose": "save progress after value",
+   "content": "summary card 'Your routine: Vitamin D3, daily 8:00 AM' with check, title 'Save your routine', Sign in with Apple black button, Continue with email outline, small terms"
+  },
+  {
+   "name": "paywall",
+   "group": "onboarding",
+   "nav": "none",
+   "states": [
+    "default"
+   ],
+   "purpose": "trial-to-paid conversion",
+   "content": "close X, gradient hero with Lora title 'Stay consistent with DailyDose Plus', trial timeline (Today: full access, Day 5: reminder before trial ends, Day 7: billing starts), plan cards Yearly $39.99 (badge 'Save 58%', $3.33/mo, selected) and Monthly $7.99, primary 'Start 7-day free trial', 'Restore purchases', 'Cancel anytime in Settings'"
+  },
+  {
+   "name": "today",
+   "group": "core",
+   "nav": "Today",
+   "states": [
+    "default",
+    "empty"
+   ],
+   "purpose": "daily checklist home",
+   "content": "greeting 'Good morning, Maya', date Thu Oct 2, focal streak ring card 'Day 6 streak, 3 of 5 done', checklist rows with time: Vitamin D3 8:00 AM done, Omega-3 8:00 AM done, Morning walk 20 min done, Magnesium 9:30 PM pending, Stretching 10 min pending, floating + add button"
+  },
+  {
+   "name": "today-empty",
+   "group": "core",
+   "nav": "Today",
+   "states": [
+    "empty"
+   ],
+   "purpose": "first-run zero state",
+   "content": "greeting 'Hi Maya', real photo of empty pill organizer, 'Your day is clear', 'Add your first reminder in under a minute', primary 'Add reminder', suggestion chips Vitamin D3, Morning walk"
+  },
+  {
+   "name": "add-reminder",
+   "group": "detail",
+   "nav": "none",
+   "states": [
+    "default"
+   ],
+   "purpose": "add supplement or workout reminder",
+   "content": "bottom sheet, segmented Supplement / Workout, name field 'Magnesium Glycinate', dose '200 mg', time 9:30 PM, repeat chips daily, 'With food' toggle, primary 'Save reminder'"
+  },
+  {
+   "name": "supplement-detail",
+   "group": "detail",
+   "nav": "none",
+   "states": [
+    "default"
+   ],
+   "purpose": "one supplement history",
+   "content": "back, product photo of Vitamin D3 bottle, name + 'Vitamin D3 2000 IU, daily 8:00 AM', focal 30-day dot calendar 26/30 taken, stock 'About 12 days left' with 'Remind me to reorder', edit button"
+  },
+  {
+   "name": "routines",
+   "group": "core",
+   "nav": "Routines",
+   "states": [
+    "default"
+   ],
+   "purpose": "list of routines",
+   "content": "title 'Routines', segmented Supplements / Workouts, workout cards with photos: Morning walk 20 min, Full-body stretch 10 min, Core 15 min; supplement rows; add button"
+  },
+  {
+   "name": "progress",
+   "group": "core",
+   "nav": "Progress",
+   "states": [
+    "default"
+   ],
+   "purpose": "habit progress",
+   "content": "focal big '6 day streak' in Lora, weekly bar chart completion %, best streak 14 days, consistency 86% this month, badges row: First week, Early bird"
+  },
+  {
+   "name": "trial-ending",
+   "group": "detail",
+   "nav": "none",
+   "states": [
+    "default"
+   ],
+   "purpose": "day 5 trial-end reminder screen",
+   "content": "focal card 'Your trial ends in 2 days', recap stats 'You took 41 doses, 6 day streak', plan Yearly $39.99, primary 'Keep DailyDose Plus', secondary 'Remind me tomorrow', small 'Manage subscription'"
+  },
+  {
+   "name": "profile",
+   "group": "settings",
+   "nav": "Profile",
+   "states": [
+    "default"
+   ],
+   "purpose": "account + notification prefs",
+   "content": "avatar photo of Maya, plan badge 'Plus trial, 5 days left', Notifications section toggles: Dose reminders on, Daily check-in on, Weekly progress email on, Tips and offers off; Quiet hours 10 PM - 7 AM; Manage subscription, Restore purchases, Help"
+  },
+  {
+   "name": "paywall-b",
+   "group": "onboarding",
+   "nav": "none",
+   "states": [
+    "default"
+   ],
+   "purpose": "paywall A/B variant B: social proof, personalised plan, free-trial toggle",
+   "content": "paywall A/B variant B: social proof, personalised plan, free-trial toggle"
+  },
+  {
+   "name": "push-sequence",
+   "group": "detail",
+   "nav": "none",
+   "states": [
+    "default"
+   ],
+   "purpose": "lock screen with day 1/3/5/7 push sequence, actionable Done/Snooze",
+   "content": "lock screen with day 1/3/5/7 push sequence, actionable Done/Snooze"
+  },
+  {
+   "name": "daily-check-in",
+   "group": "core",
+   "nav": "none",
+   "states": [
+    "default"
+   ],
+   "purpose": "evening check-in from 8 PM push: mood, energy, finish routine",
+   "content": "evening check-in from 8 PM push: mood, energy, finish routine"
+  },
+  {
+   "name": "check-in-complete",
+   "group": "core",
+   "nav": "none",
+   "states": [
+    "default"
+   ],
+   "purpose": "7-day streak celebration, tomorrow plan, check-in reminder toggle, soft Plus upsell",
+   "content": "7-day streak celebration, tomorrow plan, check-in reminder toggle, soft Plus upsell"
+  },
+  {
+   "name": "win-back",
+   "group": "settings",
+   "nav": "none",
+   "states": [
+    "default"
+   ],
+   "purpose": "RevenueCat promo offer on cancel: 50% off yearly, switch monthly, pause",
+   "content": "RevenueCat promo offer on cancel: 50% off yearly, switch monthly, pause"
+  },
+  {
+   "name": "push-recovery",
+   "group": "core",
+   "nav": "Today",
+   "states": [
+    "default"
+   ],
+   "purpose": "Today with reminders-off banner after push denied, missed dose flag",
+   "content": "Today with reminders-off banner after push denied, missed dose flag"
+  }
+ ],
+ "designSystem": {
+  "variant": "P28",
+  "theme": "light",
+  "frame": "393x852, top inset 59px, bottom inset 34px",
+  "color": {
+   "background": "#F4FCFB",
+   "surface": "#FFFFFF",
+   "surfaceAlt": "#EAF6F4",
+   "accent": "#14B8A6",
+   "accentFill": "#0E8376",
+   "accentTint": "#E3F7F4",
+   "accentPressed": "#0B6E63",
+   "support": "#DDA8F0",
+   "text": {
+    "primary": "#0C1F1D",
+    "secondary": "#4A615E",
+    "tertiary": "#7C918E"
+   },
+   "border": "#D7E8E5",
+   "success": "#16A34A",
+   "warning": "#D97706",
+   "danger": "#DC2626"
+  },
+  "type": {
+   "fontFamily": "Nunito Sans",
+   "displayFamily": "Lora",
+   "numeralFamily": "Nunito Sans",
+   "display": "32/700/-0.02em",
+   "title": "20/600",
+   "body": "16/400",
+   "label": "14/600",
+   "caption": "13/500"
+  },
+  "radius": {
+   "card": 20,
+   "control": 14,
+   "input": 12,
+   "pill": 999
+  },
+  "spacing": "8pt scale, 20px edge padding",
+  "elevation": "card 0 1px 2px rgba(12,31,29,.04) + 0 8px 24px rgba(12,31,29,.06)",
+  "icons": "rounded outline 24px 1.75 stroke, Lucide style",
+  "a11y": "white labels only on #0E8376; taps >= 44pt"
+ },
+ "allow3D": false,
+ "focus": "JD focus (user): paywall + trial-to-paid (RevenueCat), push notifications, daily check-in"
+}

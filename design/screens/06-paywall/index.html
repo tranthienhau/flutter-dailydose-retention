@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DailyDose Plus Subscription</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,400&amp;family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "support-lilac": "#DDA8F0",
+            "tertiary-fixed-dim": "#e9b3fc",
+            "on-secondary-fixed": "#00201c",
+            "primary-fixed-dim": "#4fdbc8",
+            "on-error-container": "#93000a",
+            "surface-tint": "#006b5f",
+            "outline": "#6c7a77",
+            "tertiary-fixed": "#f8d8ff",
+            "inverse-primary": "#4fdbc8",
+            "on-tertiary-fixed": "#310344",
+            "on-tertiary": "#ffffff",
+            "surface": "#FFFFFF",
+            "outline-variant": "#bbcac6",
+            "border": "#D7E8E5",
+            "surface-container-high": "#e2eae9",
+            "surface-dim": "#d4dcdb",
+            "primary": "#006b5f",
+            "inverse-on-surface": "#eaf2f1",
+            "on-secondary-fixed-variant": "#005048",
+            "on-secondary-container": "#007166",
+            "on-error": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "tertiary": "#7a4c8d",
+            "on-tertiary-container": "#522765",
+            "error": "#ba1a1a",
+            "on-primary-fixed-variant": "#005048",
+            "on-primary": "#ffffff",
+            "secondary-container": "#93f4e4",
+            "on-surface-variant": "#3c4947",
+            "on-primary-fixed": "#00201c",
+            "surface-bright": "#f3fbfa",
+            "inverse-surface": "#2a3232",
+            "background": "#f3fbfa",
+            "surface-container": "#e7efef",
+            "text-tertiary": "#7C918E",
+            "success": "#16A34A",
+            "primary-fixed": "#71f8e4",
+            "on-background": "#151d1d",
+            "tertiary-container": "#c591d7",
+            "error-container": "#ffdad6",
+            "accent-tint": "#E3F7F4",
+            "surface-alt": "#EAF6F4",
+            "text-secondary": "#4A615E",
+            "secondary-fixed": "#93f4e4",
+            "on-surface": "#151d1d",
+            "text-primary": "#0C1F1D",
+            "secondary": "#006b60",
+            "surface-variant": "#dce4e3",
+            "on-secondary": "#ffffff",
+            "primary-container": "#14b8a6",
+            "warning": "#D97706",
+            "on-primary-container": "#00423b",
+            "on-tertiary-fixed-variant": "#603473",
+            "danger": "#DC2626",
+            "accent-pressed": "#0B6E63",
+            "accent-fill": "#0E8376",
+            "surface-container-low": "#edf5f4",
+            "secondary-fixed-dim": "#77d7c8",
+            "surface-container-highest": "#dce4e3"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "4px",
+            "space-md": "16px",
+            "space-sm": "8px",
+            "gutter": "16px",
+            "space-lg": "24px",
+            "space-xl": "32px",
+            "margin": "20px"
+          },
+          "fontFamily": {
+            "caption": ["Nunito Sans"],
+            "display": ["Lora"],
+            "body": ["Nunito Sans"],
+            "label": ["Nunito Sans"],
+            "title": ["Nunito Sans"]
+          },
+          "fontSize": {
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .shadow-soft-card {
+      box-shadow: 0 1px 2px rgba(12,31,29,0.04), 0 8px 24px rgba(12,31,29,0.06);
+    }
+    /* Hide scrollbars for clean presentation */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    * {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-text-primary antialiased flex justify-center min-h-screen">
+<!-- Mobile Container: 393px × 852px Canvas -->
+<main class="w-full max-w-[393px] min-h-[852px] bg-background relative flex flex-col justify-between overflow-x-hidden selection:bg-accent-tint selection:text-accent-fill">
+<!-- Top Navigation / Dismiss Shell (Safe Area: pt-[59px]) -->
+<header class="pt-[59px] px-5 pb-2 flex items-center justify-between z-20">
+<!-- Close / Dismiss Action -->
+<button aria-label="Close subscription screen" class="w-10 h-10 rounded-full bg-surface shadow-soft-card flex items-center justify-center text-text-secondary hover:text-text-primary active:scale-95 transition-all" onclick="window.history.back()" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+<!-- Restore Purchase Button -->
+<button class="font-label text-caption font-semibold text-text-secondary hover:text-accent-fill active:scale-95 transition-all px-3 py-1.5 rounded-full hover:bg-surface-alt" type="button">
+        Restore
+      </button>
+</header>
+<!-- Scrollable Content Stack -->
+<div class="px-5 pt-2 pb-6 flex-1 flex flex-col gap-6">
+<!-- Hero Card: Ambient Pastel Gradient Blend (#14B8A6 -> #DDA8F0) -->
+<section class="relative rounded-[24px] overflow-hidden p-6 bg-gradient-to-br from-primary-container/20 via-surface to-support-lilac/30 border border-border shadow-soft-card">
+<!-- Ambient decorative blur circles -->
+<div class="absolute -top-10 -right-10 w-36 h-36 bg-support-lilac/30 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute -bottom-8 -left-8 w-32 h-32 bg-primary-container/20 rounded-full blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<!-- Floating Feature Badge -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface/90 border border-border/80 shadow-sm mb-3">
+<span class="material-symbols-outlined text-accent-fill text-[16px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label text-caption font-bold text-accent-fill tracking-wide uppercase">DailyDose Plus</span>
+</div>
+<!-- Lora Hero Headline -->
+<h1 class="font-display text-[26px] leading-[34px] font-bold text-text-primary mb-2 tracking-tight">
+            Stay consistent with DailyDose Plus
+          </h1>
+<!-- Body Subtitle -->
+<p class="font-body text-label text-text-secondary max-w-[280px]">
+            Unlimited reminders, workout plans, &amp; in-depth progress insights.
+          </p>
+</div>
+</section>
+<!-- Vertical Trial Timeline -->
+<section class="bg-surface rounded-[20px] p-5 shadow-soft-card border border-border/60">
+<h2 class="font-title text-title text-text-primary mb-4 flex items-center gap-2">
+<span>How your trial works</span>
+</h2>
+<div class="relative pl-1">
+<!-- Continuous Vertical Timeline Rule -->
+<div class="absolute left-[19px] top-4 bottom-5 w-[2px] bg-border z-0"></div>
+<!-- Timeline Items Stack -->
+<div class="space-y-5 relative z-10">
+<!-- Step 1: Today -->
+<div class="flex items-start gap-3.5">
+<div class="w-9 h-9 rounded-full bg-accent-tint border-2 border-surface flex items-center justify-center text-accent-fill shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock_open">lock_open</span>
+</div>
+<div class="pt-0.5">
+<div class="flex items-center gap-2">
+<span class="font-title text-label font-bold text-text-primary">Today</span>
+<span class="text-caption text-accent-fill bg-accent-tint font-bold px-2 py-0.5 rounded-full">Instant</span>
+</div>
+<p class="font-body text-caption font-semibold text-text-primary mt-0.5">Full access unlocked</p>
+<p class="font-caption text-caption text-text-tertiary">Explore every premium feature immediately.</p>
+</div>
+</div>
+<!-- Step 2: Day 5 -->
+<div class="flex items-start gap-3.5">
+<div class="w-9 h-9 rounded-full bg-surface-alt border-2 border-surface flex items-center justify-center text-accent-fill shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="notifications_active">notifications_active</span>
+</div>
+<div class="pt-0.5">
+<span class="font-title text-label font-bold text-text-primary">Day 5</span>
+<p class="font-body text-caption font-semibold text-text-primary mt-0.5">Friendly reminder notice</p>
+<p class="font-caption text-caption text-text-tertiary">We send a gentle nudge so there are no surprises.</p>
+</div>
+</div>
+<!-- Step 3: Day 7 -->
+<div class="flex items-start gap-3.5">
+<div class="w-9 h-9 rounded-full bg-surface-container-low border-2 border-surface flex items-center justify-center text-text-secondary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[18px]" data-icon="credit_card">credit_card</span>
+</div>
+<div class="pt-0.5">
+<span class="font-title text-label font-bold text-text-primary">Day 7</span>
+<p class="font-body text-caption font-semibold text-text-primary mt-0.5">Billing starts, cancel anytime</p>
+<p class="font-caption text-caption text-text-tertiary">Automatic renewal unless canceled in Settings.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Plan Selection Cards -->
+<section class="flex flex-col gap-3">
+<!-- Yearly Plan (Selected by Default) -->
+<label class="relative flex items-center justify-between p-4 rounded-[20px] bg-accent-tint/60 border-2 border-accent-fill cursor-pointer shadow-soft-card transition-all duration-200" id="yearly-card" onclick="selectPlan('yearly')">
+<!-- Top Right Badge -->
+<div class="absolute -top-3 right-4 bg-accent-fill text-surface font-label text-[11px] font-bold px-2.5 py-0.5 rounded-full shadow-sm">
+            Save 58%
+          </div>
+<div class="flex items-center gap-3.5">
+<!-- Custom Radio Graphic -->
+<div class="w-5 h-5 rounded-full border-2 border-accent-fill bg-accent-fill flex items-center justify-center text-surface transition-colors" id="radio-yearly">
+<span class="material-symbols-outlined text-[14px] font-bold" data-icon="check">check</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h3 class="font-title text-title text-text-primary font-bold">Yearly Access</h3>
+</div>
+<p class="font-caption text-caption text-text-secondary mt-0.5">$39.99/year after trial</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-title text-[18px] leading-tight font-extrabold text-accent-fill block">$3.33<span class="text-caption font-semibold">/mo</span></span>
+<span class="font-caption text-[11px] text-text-tertiary">Billed annually</span>
+</div>
+</label>
+<!-- Monthly Plan -->
+<label class="relative flex items-center justify-between p-4 rounded-[20px] bg-surface border border-border cursor-pointer shadow-soft-card transition-all duration-200" id="monthly-card" onclick="selectPlan('monthly')">
+<div class="flex items-center gap-3.5">
+<!-- Custom Radio Graphic -->
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant bg-transparent flex items-center justify-center text-transparent transition-colors" id="radio-monthly">
+<span class="material-symbols-outlined text-[14px] font-bold" data-icon="check">check</span>
+</div>
+<div>
+<h3 class="font-title text-title text-text-primary font-bold">Monthly Access</h3>
+<p class="font-caption text-caption text-text-secondary mt-0.5">Billed monthly after trial</p>
+</div>
+</div>
+<div class="text-right">
+<span class="font-title text-[18px] leading-tight font-extrabold text-text-primary block">$7.99<span class="text-caption font-semibold">/mo</span></span>
+<span class="font-caption text-[11px] text-text-tertiary">Billed monthly</span>
+</div>
+</label>
+</section>
+</div>
+<!-- Bottom Actions Container (Respects 34px Safe Area) -->
+<footer class="px-5 pt-2 pb-[34px] flex flex-col items-center bg-gradient-to-t from-background via-background to-transparent z-20">
+<!-- Primary Pill Button (Height 54px, 999px radius) -->
+<button class="w-full h-[54px] rounded-full bg-accent-fill text-surface font-title text-body font-bold shadow-md hover:bg-accent-pressed active:scale-[0.98] transition-all flex items-center justify-center gap-2" id="cta-button" type="button">
+<span>Start 7-day free trial</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Trust Caption -->
+<p class="font-caption text-caption text-text-tertiary text-center mt-3">
+        Cancel anytime in Settings • No commitment
+      </p>
+<!-- Regulatory & Legal Links -->
+<div class="flex items-center justify-center gap-4 mt-3">
+<button class="font-label text-caption text-text-tertiary hover:text-accent-fill transition-colors" type="button">
+          Restore purchases
+        </button>
+<span class="text-border">•</span>
+<button class="font-label text-caption text-text-tertiary hover:text-accent-fill transition-colors" type="button">
+          Terms &amp; Privacy
+        </button>
+</div>
+<!-- iOS Home Indicator bar emulation for realism -->
+<div class="w-32 h-1 bg-text-primary/20 rounded-full mt-4"></div>
+</footer>
+</main>
+<!-- Interactive State Logic -->
+<script>
+    function selectPlan(plan) {
+      const yearlyCard = document.getElementById('yearly-card');
+      const monthlyCard = document.getElementById('monthly-card');
+      const radioYearly = document.getElementById('radio-yearly');
+      const radioMonthly = document.getElementById('radio-monthly');
+      const ctaButton = document.getElementById('cta-button');
+
+      if (plan === 'yearly') {
+        // Highlight Yearly
+        yearlyCard.className = "relative flex items-center justify-between p-4 rounded-[20px] bg-accent-tint/60 border-2 border-accent-fill cursor-pointer shadow-soft-card transition-all duration-200";
+        monthlyCard.className = "relative flex items-center justify-between p-4 rounded-[20px] bg-surface border border-border cursor-pointer shadow-soft-card transition-all duration-200";
+        
+        radioYearly.className = "w-5 h-5 rounded-full border-2 border-accent-fill bg-accent-fill flex items-center justify-center text-surface transition-colors";
+        radioMonthly.className = "w-5 h-5 rounded-full border-2 border-outline-variant bg-transparent flex items-center justify-center text-transparent transition-colors";
+        
+        ctaButton.querySelector('span:first-child').innerText = 'Start 7-day free trial';
+      } else {
+        // Highlight Monthly
+        yearlyCard.className = "relative flex items-center justify-between p-4 rounded-[20px] bg-surface border border-border cursor-pointer shadow-soft-card transition-all duration-200";
+        monthlyCard.className = "relative flex items-center justify-between p-4 rounded-[20px] bg-accent-tint/60 border-2 border-accent-fill cursor-pointer shadow-soft-card transition-all duration-200";
+        
+        radioYearly.className = "w-5 h-5 rounded-full border-2 border-outline-variant bg-transparent flex items-center justify-center text-transparent transition-colors";
+        radioMonthly.className = "w-5 h-5 rounded-full border-2 border-accent-fill bg-accent-fill flex items-center justify-center text-surface transition-colors";
+        
+        ctaButton.querySelector('span:first-child').innerText = 'Start Monthly Plan';
+      }
+    }
+  </script>
+</body></html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>DailyDose - Notification Reminder Setup</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@100..900&amp;family=Nunito+Sans:wght@100..900&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-primary": "#4fdbc8",
+            "accent-tint": "#E3F7F4",
+            "inverse-on-surface": "#eaf2f1",
+            "text-primary": "#0C1F1D",
+            "border": "#D7E8E5",
+            "outline": "#6c7a77",
+            "inverse-surface": "#2a3232",
+            "text-secondary": "#4A615E",
+            "error-container": "#ffdad6",
+            "secondary": "#006b60",
+            "background": "#f3fbfa",
+            "danger": "#DC2626",
+            "surface-variant": "#dce4e3",
+            "on-primary-fixed-variant": "#005048",
+            "on-background": "#151d1d",
+            "surface-tint": "#006b5f",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#edf5f4",
+            "secondary-container": "#93f4e4",
+            "primary-container": "#14b8a6",
+            "secondary-fixed": "#93f4e4",
+            "surface-alt": "#EAF6F4",
+            "warning": "#D97706",
+            "outline-variant": "#bbcac6",
+            "on-tertiary-container": "#522765",
+            "secondary-fixed-dim": "#77d7c8",
+            "accent-fill": "#0E8376",
+            "surface-container-high": "#e2eae9",
+            "surface-container": "#e7efef",
+            "on-error-container": "#93000a",
+            "on-primary": "#ffffff",
+            "surface-bright": "#f3fbfa",
+            "on-secondary-container": "#007166",
+            "error": "#ba1a1a",
+            "on-primary-container": "#00423b",
+            "surface-dim": "#d4dcdb",
+            "support-lilac": "#DDA8F0",
+            "tertiary-container": "#c591d7",
+            "on-secondary-fixed-variant": "#005048",
+            "on-tertiary": "#ffffff",
+            "accent-pressed": "#0B6E63",
+            "success": "#16A34A",
+            "tertiary-fixed": "#f8d8ff",
+            "on-secondary": "#ffffff",
+            "tertiary": "#7a4c8d",
+            "primary-fixed": "#71f8e4",
+            "on-surface-variant": "#3c4947",
+            "primary-fixed-dim": "#4fdbc8",
+            "on-primary-fixed": "#00201c",
+            "primary": "#006b5f",
+            "on-tertiary-fixed-variant": "#603473",
+            "on-error": "#ffffff",
+            "on-surface": "#151d1d",
+            "on-secondary-fixed": "#00201c",
+            "text-tertiary": "#7C918E",
+            "surface": "#FFFFFF",
+            "on-tertiary-fixed": "#310344",
+            "surface-container-highest": "#dce4e3",
+            "tertiary-fixed-dim": "#e9b3fc"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "16px",
+            "space-xs": "4px",
+            "space-sm": "8px",
+            "space-xl": "32px",
+            "space-lg": "24px",
+            "margin": "20px",
+            "gutter": "16px"
+          },
+          "fontFamily": {
+            "label": ["Nunito Sans"],
+            "body": ["Nunito Sans"],
+            "display": ["Lora"],
+            "caption": ["Nunito Sans"],
+            "title": ["Nunito Sans"]
+          },
+          "fontSize": {
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+          },
+          "boxShadow": {
+            "soft-ambient": "0 1px 2px rgba(12,31,29,0.04), 0 8px 24px rgba(12,31,29,0.06)",
+            "button-ambient": "0 4px 16px rgba(14,131,118,0.25)"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary antialiased min-h-screen flex justify-center selection:bg-accent-tint selection:text-accent-fill">
+<!-- iPhone Mobile Container (393px × 852px frame simulation) -->
+<main class="w-full max-w-[393px] min-h-[852px] bg-background flex flex-col justify-between relative shadow-2xl overflow-hidden px-margin pb-6">
+<!-- Top Dynamic Safe Area & Navigation -->
+<header class="w-full pt-12 pb-3">
+<!-- iOS Status Bar Placeholder Spacing -->
+<div class="flex items-center justify-between h-11 w-full">
+<!-- Back Navigation Button -->
+<button aria-label="Go back" class="w-10 h-10 -ml-1 rounded-full flex items-center justify-center text-text-primary hover:bg-surface-alt active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<!-- Onboarding Progress Dots -->
+<div aria-label="Step 3 of 3" aria-valuemax="3" aria-valuemin="1" aria-valuenow="3" class="flex items-center space-x-2" role="progressbar">
+<span class="w-1.5 h-1.5 rounded-full bg-border transition-all"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-border transition-all"></span>
+<span class="w-6 h-1.5 rounded-full bg-primary-container transition-all shadow-sm"></span>
+</div>
+<!-- Skip Action -->
+<button class="font-label text-label text-text-tertiary hover:text-text-primary transition-colors py-1 px-2 active:opacity-70" type="button">
+          Skip
+        </button>
+</div>
+</header>
+<!-- Scrollable/Flow Content Region -->
+<div class="flex-1 flex flex-col items-center justify-start space-y-5 my-auto">
+<!-- Focal Hero Illustration Feature Card -->
+<div class="relative w-full aspect-square max-w-[240px] rounded-lg bg-surface shadow-soft-ambient p-3 flex items-center justify-center overflow-hidden border border-border/40">
+<!-- Atmospheric blurred background blobs -->
+<div class="absolute -top-10 -right-10 w-36 h-36 bg-accent-tint rounded-full blur-2xl opacity-70 pointer-events-none"></div>
+<div class="absolute -bottom-8 -left-8 w-32 h-32 bg-support-lilac/30 rounded-full blur-2xl opacity-60 pointer-events-none"></div>
+<!-- Real photo: lock screen notification -->
+<img alt="Real photo: hand holding an iPhone in a sunny kitchen showing the DailyDose Vitamin D3 8:00 AM notification" class="w-full h-full object-contain relative z-10 drop-shadow-sm select-none" src="https://lh3.googleusercontent.com/aida/AEtjO1Xc_XJe4kr7G2vwheijOoD8J5ACR5qT5phPyr5OwJ-BFzw4MY-bkxdyXolt4OEgW74Cp9gAxFC3Pk3cOfprBBsX9zt_fUzlWyh-fxNKOficU-OnKdplpIbqmNLGkP8OaeIxhce8j3wJTZTT1LQDmoQ-z7K1NvNRes_eNNgNtzgZwJUC4bLYcARyA-gNx1jth3fX8K9mAdddMNRkaIfN33BrrjRSYTj1aR7LdwzzmECxQx8Euu5-L6tuQmE">
+</div>
+<!-- Headline & Value Pitch -->
+<div class="text-center px-2 space-y-2">
+<h1 class="font-display text-[27px] sm:text-[30px] font-bold text-text-primary leading-tight tracking-tight">
+          Never miss your<br><span class="italic font-normal">8:00 AM</span> dose
+        </h1>
+<p class="font-body text-body text-text-secondary text-[15px] leading-relaxed max-w-[310px] mx-auto">
+          Building lasting health starts with tiny daily rituals. A gentle nudge right when you need it most.
+        </p>
+</div>
+<!-- Benefit Rows Bento-Lite Container -->
+<div class="w-full bg-surface rounded-lg p-space-md shadow-soft-ambient space-y-3.5 border border-border/40">
+<!-- Row 1: Gentle Reminder -->
+<div class="flex items-center space-x-3.5">
+<div class="w-11 h-11 rounded-2xl bg-accent-tint flex items-center justify-center flex-shrink-0 text-accent-fill">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-title text-[15px] font-semibold text-text-primary leading-snug">
+              One gentle reminder
+            </span>
+<span class="font-caption text-caption text-text-secondary">
+              Delivered at the exact time you picked
+            </span>
+</div>
+</div>
+<!-- Row 2: Habit Streaks -->
+<div class="flex items-center space-x-3.5">
+<div class="w-11 h-11 rounded-2xl bg-accent-tint flex items-center justify-center flex-shrink-0 text-accent-fill">
+<span class="material-symbols-outlined text-[22px]">local_fire_department</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-title text-[15px] font-semibold text-text-primary leading-snug">
+              Keep your streak going
+            </span>
+<span class="font-caption text-caption text-text-secondary">
+              Watch your consistency flourish day by day
+            </span>
+</div>
+</div>
+<!-- Row 3: Quiet Hours -->
+<div class="flex items-center space-x-3.5">
+<div class="w-11 h-11 rounded-2xl bg-accent-tint flex items-center justify-center flex-shrink-0 text-accent-fill">
+<span class="material-symbols-outlined text-[22px]">dark_mode</span>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-title text-[15px] font-semibold text-text-primary leading-snug">
+              Quiet hours, no spam
+            </span>
+<span class="font-caption text-caption text-text-secondary">
+              We respect your peace and mental calm
+            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Actions & System Home Indicator Area -->
+<footer class="w-full pt-4 flex flex-col items-center space-y-2.5">
+<!-- Primary Pill Action Button -->
+<button class="w-full h-14 rounded-full bg-accent-fill hover:bg-accent-pressed active:scale-[0.98] transition-all text-on-primary font-title text-[16px] font-bold shadow-button-ambient flex items-center justify-center space-x-2 focus:outline-none focus:ring-2 focus:ring-primary-container focus:ring-offset-2" type="button">
+<span>Turn on reminders</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Secondary Text Button -->
+<button class="font-title text-[15px] font-semibold text-text-secondary hover:text-accent-fill py-2 px-6 active:opacity-75 transition-colors" type="button">
+        Not now
+      </button>
+<!-- iOS Home Indicator -->
+<div class="pt-2 w-full flex justify-center">
+<div class="w-36 h-1 bg-on-background/25 rounded-full"></div>
+</div>
+</footer>
+</main>
+</body></html>

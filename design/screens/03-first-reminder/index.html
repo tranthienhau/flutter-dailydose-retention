@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=393, height=852, initial-scale=1.0">
+  <title>DailyDose Set Reminder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,600&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,400;1,600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandBg: '#F4FCFB',
+            surfaceCard: '#FFFFFF',
+            surfaceAlt: '#EAF6F4',
+            accentTeal: '#14B8A6',
+            accentFill: '#0E8376',
+            accentPressed: '#0B6E63',
+            accentTint: '#E3F7F4',
+            textPrimary: '#0C1F1D',
+            textSecondary: '#4A615E',
+            textTertiary: '#7C918E',
+            borderColor: '#D7E8E5',
+          },
+          fontFamily: {
+            display: ['Lora', 'serif'],
+            sans: ['"Nunito Sans"', 'sans-serif'],
+          },
+          boxShadow: {
+            softCard: '0 1px 2px rgba(12,31,29,0.04), 0 8px 24px rgba(12,31,29,0.06)',
+            subtle: '0 2px 8px rgba(12,31,29,0.04)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      background-color: #F4FCFB;
+      color: #0C1F1D;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif-title {
+      font-family: 'Lora', serif;
+    }
+    /* Hide scrollbars for clean mobile feel */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="w-[393px] h-[852px] max-w-[393px] max-h-[852px] mx-auto bg-brandBg flex flex-col justify-between overflow-hidden relative select-none">
+
+  <!-- Top Status & Progress Bar -->
+  <div class="pt-12 px-6 pb-2">
+    <!-- Top Nav Row: Back / Progress Dots / Skip -->
+    <div class="flex items-center justify-between h-8 mb-5">
+      <button class="w-8 h-8 flex items-center justify-center rounded-full text-textSecondary active:bg-surfaceAlt transition-colors" aria-label="Go back">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+      </button>
+
+      <!-- 3 Progress Dots: Second active (#14B8A6 pill) -->
+      <div class="flex items-center space-x-1.5" role="progressbar" aria-valuenow="2" aria-valuemin="1" aria-valuemax="3" aria-label="Step 2 of 3">
+        <span class="w-2 h-2 rounded-full bg-borderColor"></span>
+        <span class="w-5 h-2 rounded-full bg-accentTeal shadow-sm"></span>
+        <span class="w-2 h-2 rounded-full bg-borderColor"></span>
+      </div>
+
+      <button class="text-sm font-semibold text-textTertiary hover:text-textSecondary active:opacity-75 transition-opacity px-1">
+        Skip
+      </button>
+    </div>
+
+    <!-- Screen Title & Subtitle -->
+    <div class="space-y-1">
+      <h1 class="font-serif-title text-[28px] font-bold text-textPrimary tracking-tight leading-tight">
+        Set your first reminder
+      </h1>
+      <p class="text-sm text-textSecondary font-normal">
+        Pick a consistent time to build the habit effortlessly.
+      </p>
+    </div>
+  </div>
+
+  <!-- Main Scrollable Content / Focal Time Picker Card -->
+  <div class="flex-1 px-5 py-2 flex flex-col space-y-4 overflow-y-auto">
+    
+    <!-- Focal Element: Large White Card with Wheel Time Picker -->
+    <div class="bg-surfaceCard rounded-[20px] p-5 shadow-softCard border border-borderColor/60 relative">
+      <div class="flex items-center justify-between mb-3">
+        <div class="flex items-center space-x-2">
+          <div class="w-7 h-7 rounded-full bg-accentTint flex items-center justify-center text-accentFill">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-wider text-textSecondary">Morning Dose</span>
+        </div>
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-accentTint text-accentFill">
+          Recommended
+        </span>
+      </div>
+
+      <!-- Time Wheel Display -->
+      <div class="relative py-2 px-3 bg-brandBg/60 rounded-2xl border border-borderColor/40 flex items-center justify-center overflow-hidden">
+        <!-- Wheel top & bottom fade overlays -->
+        <div class="absolute inset-x-0 top-0 h-7 bg-gradient-to-b from-brandBg/90 to-transparent pointer-events-none z-10"></div>
+        <div class="absolute inset-x-0 bottom-0 h-7 bg-gradient-to-t from-brandBg/90 to-transparent pointer-events-none z-10"></div>
+
+        <!-- Wheel Content Columns -->
+        <div class="flex items-center justify-center space-x-5 py-1">
+          <!-- Hours Column -->
+          <div class="flex flex-col items-center">
+            <span class="text-base text-textTertiary/50 font-normal leading-tight">07</span>
+            <span class="text-[44px] font-bold text-textPrimary tracking-tight leading-none my-1 font-sans">08</span>
+            <span class="text-base text-textTertiary/50 font-normal leading-tight">09</span>
+          </div>
+
+          <!-- Separator Colon -->
+          <div class="text-[34px] font-bold text-textPrimary -mt-1 leading-none">:</div>
+
+          <!-- Minutes Column -->
+          <div class="flex flex-col items-center">
+            <span class="text-base text-textTertiary/50 font-normal leading-tight">45</span>
+            <span class="text-[44px] font-bold text-textPrimary tracking-tight leading-none my-1 font-sans">00</span>
+            <span class="text-base text-textTertiary/50 font-normal leading-tight">15</span>
+          </div>
+
+          <!-- Period (AM / PM) Pill Selector -->
+          <div class="flex flex-col bg-surfaceCard p-1 rounded-xl border border-borderColor shadow-xs ml-2">
+            <button class="px-2.5 py-1 rounded-lg text-xs font-bold bg-accentFill text-white shadow-xs">
+              AM
+            </button>
+            <button class="px-2.5 py-1 rounded-lg text-xs font-bold text-textTertiary hover:text-textSecondary">
+              PM
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Micro-hint below picker -->
+      <div class="mt-3 flex items-center justify-center space-x-1.5 text-xs text-textSecondary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" class="text-accentTeal">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+        <span>Best taken with breakfast & healthy fats</span>
+      </div>
+    </div>
+
+    <!-- Section 1: Which supplement? -->
+    <div class="space-y-2">
+      <div class="flex items-center justify-between">
+        <h2 class="text-sm font-bold text-textPrimary tracking-tight">Which supplement?</h2>
+        <span class="text-xs text-textTertiary">Select primary</span>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <!-- Vitamin D3: Selected (#0E8376 fill, white label) -->
+        <button class="h-9 px-4 rounded-full bg-accentFill text-white text-sm font-semibold flex items-center space-x-1.5 shadow-sm active:bg-accentPressed transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Vitamin D3</span>
+        </button>
+
+        <!-- Omega-3: Unselected (tint #E3F7F4, #0E8376 label) -->
+        <button class="h-9 px-4 rounded-full bg-accentTint text-accentFill text-sm font-semibold hover:brightness-95 active:scale-95 transition-all">
+          Omega-3
+        </button>
+
+        <!-- Magnesium: Unselected (tint #E3F7F4, #0E8376 label) -->
+        <button class="h-9 px-4 rounded-full bg-accentTint text-accentFill text-sm font-semibold hover:brightness-95 active:scale-95 transition-all">
+          Magnesium
+        </button>
+
+        <!-- Multivitamin: Unselected (tint #E3F7F4, #0E8376 label) -->
+        <button class="h-9 px-4 rounded-full bg-accentTint text-accentFill text-sm font-semibold hover:brightness-95 active:scale-95 transition-all">
+          Multivitamin
+        </button>
+      </div>
+    </div>
+
+    <!-- Section 2: Repeat (Day chips M T W T F S S all selected) -->
+    <div class="space-y-2 pt-1">
+      <div class="flex items-center justify-between">
+        <h2 class="text-sm font-bold text-textPrimary tracking-tight">Repeat</h2>
+        <span class="text-xs font-semibold text-accentFill">Every day</span>
+      </div>
+      
+      <!-- 7 Day Chips: all selected with #0E8376 fill, white text -->
+      <div class="grid grid-cols-7 gap-1.5">
+        <button class="h-10 w-full rounded-full bg-accentFill text-white font-bold text-sm flex items-center justify-center shadow-xs active:bg-accentPressed transition-transform active:scale-95" title="Monday">
+          M
+        </button>
+        <button class="h-10 w-full rounded-full bg-accentFill text-white font-bold text-sm flex items-center justify-center shadow-xs active:bg-accentPressed transition-transform active:scale-95" title="Tuesday">
+          T
+        </button>
+        <button class="h-10 w-full rounded-full bg-accentFill text-white font-bold text-sm flex items-center justify-center shadow-xs active:bg-accentPressed transition-transform active:scale-95" title="Wednesday">
+          W
+        </button>
+        <button class="h-10 w-full rounded-full bg-accentFill text-white font-bold text-sm flex items-center justify-center shadow-xs active:bg-accentPressed transition-transform active:scale-95" title="Thursday">
+          T
+        </button>
+        <button class="h-10 w-full rounded-full bg-accentFill text-white font-bold text-sm flex items-center justify-center shadow-xs active:bg-accentPressed transition-transform active:scale-95" title="Friday">
+          F
+        </button>
+        <button class="h-10 w-full rounded-full bg-accentFill text-white font-bold text-sm flex items-center justify-center shadow-xs active:bg-accentPressed transition-transform active:scale-95" title="Saturday">
+          S
+        </button>
+        <button class="h-10 w-full rounded-full bg-accentFill text-white font-bold text-sm flex items-center justify-center shadow-xs active:bg-accentPressed transition-transform active:scale-95" title="Sunday">
+          S
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom CTA & Caption (Strictly NO bottom tab bar / bottom navigation) -->
+  <div class="px-5 pt-3 pb-8 bg-gradient-to-t from-brandBg via-brandBg/95 to-transparent">
+    <!-- Caption: 'You can add more later' -->
+    <p class="text-center text-xs text-textSecondary font-medium mb-3.5">
+      You can add more later
+    </p>
+
+    <!-- Full-width pill primary button 'Save my reminder' #0E8376 -->
+    <button class="w-full h-14 rounded-full bg-accentFill text-white text-base font-bold flex items-center justify-center space-x-2 shadow-md hover:bg-accentPressed active:scale-[0.99] transition-all">
+      <span>Save my reminder</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </button>
+
+    <!-- iOS Home Indicator bar -->
+    <div class="w-32 h-1 bg-textPrimary/20 rounded-full mx-auto mt-4"></div>
+  </div>
+
+</body>
+</html>

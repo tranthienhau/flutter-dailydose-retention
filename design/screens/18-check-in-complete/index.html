@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily Routine Celebration</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Lora & Nunito Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,600&amp;family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;1,6..12,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#77d7c8",
+            "tertiary": "#7a4c8d",
+            "on-secondary-container": "#007166",
+            "surface-tint": "#006b5f",
+            "on-tertiary-container": "#522765",
+            "inverse-surface": "#2a3232",
+            "surface-container": "#e7efef",
+            "border": "#D7E8E5",
+            "surface-container-high": "#e2eae9",
+            "warning": "#D97706",
+            "on-tertiary-fixed-variant": "#603473",
+            "secondary-container": "#93f4e4",
+            "background": "#f3fbfa",
+            "primary": "#006b5f",
+            "tertiary-fixed-dim": "#e9b3fc",
+            "secondary": "#006b60",
+            "surface-dim": "#d4dcdb",
+            "surface-container-low": "#edf5f4",
+            "text-secondary": "#4A615E",
+            "accent-fill": "#0E8376",
+            "surface": "#FFFFFF",
+            "outline": "#6c7a77",
+            "primary-container": "#14b8a6",
+            "on-primary-container": "#00423b",
+            "surface-container-lowest": "#ffffff",
+            "on-background": "#151d1d",
+            "on-tertiary": "#ffffff",
+            "surface-variant": "#dce4e3",
+            "tertiary-fixed": "#f8d8ff",
+            "secondary-fixed": "#93f4e4",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed-variant": "#005048",
+            "text-primary": "#0C1F1D",
+            "outline-variant": "#bbcac6",
+            "on-surface-variant": "#3c4947",
+            "inverse-on-surface": "#eaf2f1",
+            "on-surface": "#151d1d",
+            "success": "#16A34A",
+            "on-primary-fixed": "#00201c",
+            "on-primary": "#ffffff",
+            "accent-pressed": "#0B6E63",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed": "#310344",
+            "on-error": "#ffffff",
+            "support-lilac": "#DDA8F0",
+            "primary-fixed-dim": "#4fdbc8",
+            "inverse-primary": "#4fdbc8",
+            "tertiary-container": "#c591d7",
+            "surface-alt": "#EAF6F4",
+            "accent-tint": "#E3F7F4",
+            "on-error-container": "#93000a",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#00201c",
+            "text-tertiary": "#7C918E",
+            "surface-bright": "#f3fbfa",
+            "primary-fixed": "#71f8e4",
+            "on-secondary-fixed-variant": "#005048",
+            "danger": "#DC2626",
+            "surface-container-highest": "#dce4e3"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "card": "20px",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "20px",
+            "space-lg": "24px",
+            "space-xs": "4px",
+            "space-xl": "32px",
+            "space-sm": "8px",
+            "gutter": "16px",
+            "space-md": "16px"
+          },
+          "fontFamily": {
+            "title": ["Nunito Sans", "sans-serif"],
+            "display": ["Lora", "serif"],
+            "label": ["Nunito Sans", "sans-serif"],
+            "body": ["Nunito Sans", "sans-serif"],
+            "caption": ["Nunito Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "title": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+            "body": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "caption": ["13px", { "lineHeight": "18px", "fontWeight": "500" }]
+          },
+          "boxShadow": {
+            "soft": "0 1px 2px rgba(12, 31, 29, 0.04), 0 8px 24px rgba(12, 31, 29, 0.06)",
+            "ambient": "0 12px 32px -4px rgba(14, 131, 118, 0.08)"
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #E2ECEB;
+      font-family: 'Nunito Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+    /* iOS Toggle styling */
+    .toggle-checkbox:checked {
+      right: 2px;
+      transform: translateX(18px);
+      background-color: #ffffff;
+    }
+    .toggle-checkbox:checked + .toggle-label {
+      background-color: #14B8A6;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex items-center justify-center p-0 sm:p-4">
+<!-- iPhone Container: 393 x 852 physical frame -->
+<main class="w-[393px] h-[852px] bg-background text-text-primary flex flex-col relative overflow-hidden shadow-2xl sm:rounded-[48px] border border-border/40 select-none">
+<!-- Top Status Bar Area (~59px) -->
+<header class="w-full pt-3 px-7 flex justify-between items-center text-text-primary z-20">
+<span class="font-body text-[14px] font-bold tracking-tight">9:41</span>
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-[17px] text-text-primary leading-none" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="material-symbols-outlined text-[17px] text-text-primary leading-none" data-icon="wifi">wifi</span>
+<span class="material-symbols-outlined text-[19px] text-text-primary leading-none rotate-90" data-icon="battery_full">battery_full</span>
+</div>
+</header>
+<!-- TopAppBar (Shared Component - Closed Flow Header) -->
+<!-- Executing JSON style keys: style_bg_color, style_shell_layout, style_brand_logo, style_universal_hover, style_interactions -->
+<div class="bg-background flex justify-between items-center w-full px-margin pt-space-md pb-space-sm max-w-md mx-auto z-10">
+<button aria-label="Close" class="w-10 h-10 rounded-full flex items-center justify-center text-text-secondary hover:bg-accent-tint hover:text-primary active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="close">close</span>
+</button>
+<h1 class="text-title font-title font-semibold text-text-primary">Daily Routine</h1>
+<button aria-label="More options" class="w-10 h-10 rounded-full flex items-center justify-center text-text-secondary hover:bg-accent-tint hover:text-primary active:scale-95 transition-transform duration-150" type="button">
+<span class="material-symbols-outlined text-[24px]" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<!-- Scrollable Content Canvas (Focused Journey - No Bottom Navigation Shell) -->
+<div class="flex-1 overflow-y-auto px-margin pb-36 pt-1 space-y-4 no-scrollbar">
+<!-- Focal Streak Celebration Card -->
+<section class="bg-surface rounded-card p-5 border border-border shadow-soft relative overflow-hidden">
+<!-- Soft Gentle Organic Ambient Gradient Overlay (Teal to Lilac) -->
+<div class="absolute inset-0 bg-gradient-to-br from-[#14B8A6]/10 via-[#F4FCFB] to-[#DDA8F0]/15 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<!-- Badge Header -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-tint border border-primary-container/30 mb-3">
+<span class="material-symbols-outlined text-[16px] text-accent-fill" data-icon="local_fire_department">local_fire_department</span>
+<span class="font-label text-caption font-semibold text-accent-fill">Check-in Complete</span>
+</div>
+<!-- Hero Streak Numerals -->
+<div class="flex items-center justify-center gap-2.5 my-1">
+<span class="font-display text-[74px] leading-none font-bold text-text-primary tracking-tight">7</span>
+<div class="text-left flex flex-col justify-center">
+<span class="material-symbols-outlined text-[26px] text-primary-container leading-none mb-1" data-icon="local_fire_department">local_fire_department</span>
+<span class="font-title text-title font-bold text-text-primary leading-tight">day</span>
+<span class="font-caption text-caption text-text-secondary -mt-0.5">streak</span>
+</div>
+</div>
+<!-- Weekly Check-in Pill Matrix (7/7 Complete) -->
+<div class="w-full mt-4 pt-4 border-t border-border/60">
+<div class="flex justify-between items-center px-1">
+<!-- Monday -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-caption text-[11px] font-semibold text-text-secondary">M</span>
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-surface font-bold" data-icon="check">check</span>
+</div>
+</div>
+<!-- Tuesday -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-caption text-[11px] font-semibold text-text-secondary">T</span>
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-surface font-bold" data-icon="check">check</span>
+</div>
+</div>
+<!-- Wednesday -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-caption text-[11px] font-semibold text-text-secondary">W</span>
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-surface font-bold" data-icon="check">check</span>
+</div>
+</div>
+<!-- Thursday -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-caption text-[11px] font-semibold text-text-secondary">T</span>
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-surface font-bold" data-icon="check">check</span>
+</div>
+</div>
+<!-- Friday -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-caption text-[11px] font-semibold text-text-secondary">F</span>
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-surface font-bold" data-icon="check">check</span>
+</div>
+</div>
+<!-- Saturday -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-caption text-[11px] font-semibold text-text-secondary">S</span>
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-surface font-bold" data-icon="check">check</span>
+</div>
+</div>
+<!-- Sunday -->
+<div class="flex flex-col items-center gap-1.5">
+<span class="font-caption text-[11px] font-semibold text-text-secondary">S</span>
+<div class="w-7 h-7 rounded-full bg-primary-container ring-2 ring-primary-container/30 ring-offset-2 ring-offset-surface flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-surface font-bold" data-icon="check">check</span>
+</div>
+</div>
+</div>
+<p class="font-body text-caption font-medium text-text-secondary mt-3.5">
+              You checked in 7 days in a row
+            </p>
+</div>
+</div>
+</section>
+<!-- Tomorrow Routine Preview Card -->
+<section class="bg-surface rounded-card p-5 border border-border shadow-soft">
+<div class="flex items-center justify-between mb-3.5">
+<h2 class="font-title text-title text-text-primary font-semibold">Tomorrow</h2>
+<span class="font-caption text-caption text-text-tertiary">2 activities scheduled</span>
+</div>
+<!-- Routine Item 1 -->
+<div class="flex items-center justify-between py-2.5 px-3 rounded-DEFAULT bg-surface-alt/70 mb-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="directions_walk">directions_walk</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body text-body font-semibold text-text-primary text-[15px]">Morning walk</span>
+<span class="font-caption text-caption text-text-secondary">Outdoor wellness</span>
+</div>
+</div>
+<span class="font-label text-caption font-semibold text-text-secondary">7:30 AM</span>
+</div>
+<!-- Routine Item 2 -->
+<div class="flex items-center justify-between py-2.5 px-3 rounded-DEFAULT bg-surface-alt/70 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="pill">pill</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body text-body font-semibold text-text-primary text-[15px]">Vitamin D3</span>
+<span class="font-caption text-caption text-text-secondary">Daily supplement</span>
+</div>
+</div>
+<span class="font-label text-caption font-semibold text-text-secondary">8:00 AM</span>
+</div>
+<!-- Notification Toggle Row -->
+<div class="pt-3 border-t border-border/70 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-text-tertiary text-[20px]" data-icon="notifications_active">notifications_active</span>
+<span class="font-body text-caption font-medium text-text-primary">Remind me at 8:00 PM to check in</span>
+</div>
+<!-- iOS-style Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</section>
+<!-- Quiet Upsell Card (DailyDose Plus) -->
+<section class="bg-surface rounded-card p-4 border border-border shadow-soft flex items-center justify-between gap-3 group hover:border-primary-container/40 transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#DDA8F0]/20 flex items-center justify-center text-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="flex flex-col text-left">
+<h3 class="font-label text-label text-text-primary font-semibold leading-tight">Unlock your weekly insights</h3>
+<p class="font-caption text-caption text-text-secondary mt-0.5">Explore trend analysis with DailyDose Plus</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-tertiary text-[20px] flex-shrink-0 group-hover:translate-x-0.5 transition-transform" data-icon="chevron_right">chevron_right</span>
+</section>
+</div>
+<!-- Pinned Bottom Action Container (Safe area padded: 34px bottom space) -->
+<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/95 to-transparent pt-6 pb-9 px-margin flex flex-col items-center gap-2.5 z-30">
+<!-- Primary Done Button -->
+<button class="w-full h-[52px] rounded-full bg-accent-fill hover:bg-accent-pressed active:scale-[0.98] transition-all flex items-center justify-center shadow-ambient" type="button">
+<span class="font-label text-body font-bold text-on-primary">Done</span>
+</button>
+<!-- Secondary Text Action -->
+<button class="py-1 px-4 text-accent-fill hover:text-accent-pressed active:opacity-80 transition-opacity font-body text-body font-semibold flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="ios_share">ios_share</span>
+<span>Share my streak</span>
+</button>
+</div>
+<!-- iOS Home Indicator (~34px safe area representation) -->
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-text-primary/20 rounded-full pointer-events-none z-40"></div>
+</main>
+</body></html>
